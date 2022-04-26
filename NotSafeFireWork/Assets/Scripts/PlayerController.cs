@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
 {
 
     //components
+    [HideInInspector]
     public Rigidbody rb;
+    public GameObject gun;
     
     //scene elem
     [Header("Limits Settings")]
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float movementSpeed = 100f;
     private Vector2 movementInput;
+    public Vector2 gunDirection;
     //dash
     public AnimationCurve dashCurve;
     public float dashSpeed = 100f;
@@ -63,10 +66,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnAim(InputAction.CallbackContext context)
+    {
+        if (playerStateActu != (int)PlayerState.stun)
+        {
+            gunDirection = context.ReadValue<Vector2>();
+        }
+    }
+
+    public void OnShoot(InputAction.CallbackContext context)
+    {
+        //set rot (quaternion needed)
+        if (context.started)
+        {
+            //TODO : Start emitter
+            gun.GetComponent<BulletPro.BulletEmitter>();
+        }
+
+    }
+
 
     void FixedUpdate()
     {
         Move();
+        RotateGun();
     }
 
     public void Move()
@@ -75,6 +98,7 @@ public class PlayerController : MonoBehaviour
         switch (playerStateActu)
         {
             case (int)PlayerState.active:
+                //velocity
                 rb.velocity = new Vector3(movementInput.x * movementSpeed * Time.fixedDeltaTime, movementInput.y * movementSpeed * Time.fixedDeltaTime, rb.velocity.z);
                 break;
             case (int)PlayerState.stun:
@@ -119,6 +143,12 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, bottomBorder.position.y, transform.position.z);
         }
 
+    }
+
+    public void RotateGun()
+    {
+        //gunDirection
+        //gun.transform.
     }
 
 }
