@@ -57,7 +57,7 @@
                 {
                     "name": "",
                     "id": "50f5102d-348e-451e-a7c6-23b07fcd80df",
-                    "path": "<Gamepad>/rightStick/right",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -81,7 +81,7 @@
                     "id": "fd92ea11-1d59-4ef9-a833-f75ad389363c",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "AxisDeadzone(min=0.5)",
+                    "processors": "StickDeadzone(min=0.5)",
                     "groups": "",
                     "action": "Aim",
                     "isComposite": false,

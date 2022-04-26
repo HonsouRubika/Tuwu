@@ -30,9 +30,26 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 3f;
     private float dashCooldownStart;
 
+    //FireWorks values
+    [Header("FireWorks Settings")]
+    public float shootCooldown = 0.4f;
+    private float shootCooldownStart;
+    public float fireworkMaxStack = 3;
+    public float fireworkStackActu;
+    public float fireworkCooldown = 5f;
+    private float fireworkCooldownStart;
+
     //player state
     public enum PlayerState { active, stun, dashing}
     public int playerStateActu = (int)PlayerState.active;
+
+    /*
+     *  TODO LIST :
+     *  - attaque à la batte
+     *  - interraction batte x firework
+     *  - d'autres patternes de tir
+     *  - bouton pour changer de patternes de tir
+     */
 
     void Start()
     {
@@ -40,6 +57,8 @@ public class PlayerController : MonoBehaviour
 
         //set default private values
         dashCooldownStart = -dashCooldown;
+        shootCooldownStart = -shootCooldown;
+        fireworkStackActu = fireworkMaxStack;
     }
 
 
@@ -77,19 +96,37 @@ public class PlayerController : MonoBehaviour
     public void OnShoot(InputAction.CallbackContext context)
     {
         //set rot (quaternion needed)
-        if (context.started)
+        if (context.started && Time.time > shootCooldownStart + shootCooldown && fireworkStackActu > 0)
         {
-            //TODO : Start emitter
-            gun.GetComponent<BulletPro.BulletEmitter>();
+            shootCooldownStart = Time.time;
+            fireworkStackActu--;
+            gun.GetComponent<BulletPro.BulletEmitter>().Play();
+
+            //start reloading timer
+            if (fireworkCooldownStart + fireworkCooldown < Time.time) {
+                fireworkCooldownStart = Time.time;
+            }
+            else
+            {
+                //already reloading
+            }
+        }
+        else if (context.started && Time.time <= shootCooldownStart + shootCooldown)
+        {
+            //Debug.Log("Shoot cooldown not finished")
+        }
+        else if (context.started && fireworkStackActu <= 0)
+        {
+            //Debug.Log("No more firework to shoot");
         }
 
     }
-
 
     void FixedUpdate()
     {
         Move();
         RotateGun();
+        ReloadFireworkStack();
     }
 
     public void Move()
@@ -150,8 +187,21 @@ public class PlayerController : MonoBehaviour
         //gunDirection vector2D
         //gun.transform.LookAt(gun.transform.position + (Vector3)gunDirection, Vector3.up);
         float angle = Mathf.Atan2(-gunDirection.x, -gunDirection.y) * Mathf.Rad2Deg;
-        Debug.Log(angle);
         gun.transform.rotation = Quaternion.Euler(0,0,(180-angle)%360f);
+    }
+
+    public void ReloadFireworkStack()
+    {
+        if (fireworkStackActu < fireworkMaxStack && Time.time > fireworkCooldownStart + fireworkCooldown)
+        {
+            fireworkStackActu++;
+            Debug.Log("New firework in stack");
+
+            if (fireworkStackActu < fireworkMaxStack)
+            {
+                fireworkCooldownStart = Time.time;
+            }
+        }
     }
 
 }
