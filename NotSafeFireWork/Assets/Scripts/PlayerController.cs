@@ -147,8 +147,11 @@ public class PlayerController : MonoBehaviour
 
     public void RotateGun()
     {
-        //gunDirection
-        //gun.transform.
+        //gunDirection vector2D
+        //gun.transform.LookAt(gun.transform.position + (Vector3)gunDirection, Vector3.up);
+        float angle = Mathf.Atan2(-gunDirection.x, -gunDirection.y) * Mathf.Rad2Deg;
+        Debug.Log(angle);
+        gun.transform.rotation = Quaternion.Euler(0,0,(180-angle)%360f);
     }
 
 }
