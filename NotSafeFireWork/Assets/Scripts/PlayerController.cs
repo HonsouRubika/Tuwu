@@ -8,12 +8,7 @@ public class PlayerController : MonoBehaviour
 
     //components
     public Rigidbody rb;
-
-    //movement values
-    [Header("Movement Settings")]
-    public float movementSpeed = 100f;
-    private Vector2 movementInput;
-
+    
     //scene elem
     [Header("Limits Settings")]
     public Transform leftBorder;
@@ -21,15 +16,51 @@ public class PlayerController : MonoBehaviour
     public Transform upperBorder;
     public Transform bottomBorder;
 
+    //movement values
+    [Header("Movement Settings")]
+    public float movementSpeed = 100f;
+    private Vector2 movementInput;
+    //dash
+    public AnimationCurve dashCurve;
+    public float dashSpeed = 100f;
+    public float dashDuration = 0.6f;
+    public float dashCooldown = 3f;
+    private float dashCooldownStart;
+
+    //player state
+    public enum PlayerState { active, stun, dashing}
+    public int playerStateActu = (int)PlayerState.active;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        //set default private values
+        dashCooldownStart = -dashCooldown;
     }
 
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        movementInput = context.ReadValue<Vector2>();
+        //dont change direction if dashing
+        if (playerStateActu != (int)PlayerState.dashing)
+        {
+            movementInput = context.ReadValue<Vector2>();
+        }
+        
+    }
+
+    public void OnDash(InputAction.CallbackContext context)
+    {
+        if (context.started && Time.time > dashCooldownStart + dashCooldown)
+        {
+            dashCooldownStart = Time.time;
+            playerStateActu = (int)PlayerState.dashing;
+        }
+        else if (context.started && Time.time <= dashCooldownStart + dashCooldown)
+        {
+            //Debug.Log("Dash cooldown not finished")
+        }
     }
 
 
@@ -41,7 +72,26 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         //apply from input value
-        rb.velocity = new Vector3(movementInput.x * movementSpeed * Time.fixedDeltaTime, movementInput.y * movementSpeed * Time.fixedDeltaTime, rb.velocity.z);
+        switch (playerStateActu)
+        {
+            case (int)PlayerState.active:
+                rb.velocity = new Vector3(movementInput.x * movementSpeed * Time.fixedDeltaTime, movementInput.y * movementSpeed * Time.fixedDeltaTime, rb.velocity.z);
+                break;
+            case (int)PlayerState.stun:
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
+                break;
+            case (int)PlayerState.dashing:
+                if(Time.time < dashCooldownStart + dashDuration)
+                {
+                    rb.velocity = new Vector3(movementInput.x * (movementSpeed + dashSpeed * dashCurve.Evaluate(Time.time - dashCooldownStart)) * Time.fixedDeltaTime, movementInput.y * (movementSpeed + dashSpeed * dashCurve.Evaluate(Time.time - dashCooldownStart)) * Time.fixedDeltaTime, rb.velocity.z);
+                }
+                else
+                {
+                    //dash ended, back to normal movement
+                    playerStateActu = (int)PlayerState.active;
+                }
+                break;
+        }
 
         //check if touching borders
         //left
@@ -70,4 +120,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 }
