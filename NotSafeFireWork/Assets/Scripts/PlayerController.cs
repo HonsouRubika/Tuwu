@@ -89,7 +89,10 @@ public class PlayerController : MonoBehaviour
     {
         if (playerStateActu != (int)PlayerState.stun)
         {
-            gunDirection = context.ReadValue<Vector2>();
+            if (context.ReadValue<Vector2>().magnitude != 0)
+            {
+                gunDirection = context.ReadValue<Vector2>();
+            }
         }
     }
 
