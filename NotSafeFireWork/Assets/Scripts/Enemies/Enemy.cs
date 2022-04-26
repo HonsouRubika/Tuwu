@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
@@ -9,11 +7,19 @@ public abstract class Enemy : MonoBehaviour
 	int currentHealthPoints;
 	public int CurrentHealthPoints { get => currentHealthPoints;}
 
-	internal virtual void Start()
+	bool stunned = false;
+	public bool Stunned { get => stunned;}
+	[SerializeField] float stunDuration = 1.5f;
+	Clock stunTimer;
+
+	internal void Init()
 	{
-		Debug.Log("eusifhs");
 		currentHealthPoints = maxHealthPoints;
+		stunTimer = new Clock();
+		stunTimer.ClockEnded += OnStunTimerEnded;
 	}
+
+	#region Health system
 
 	public abstract void DealDamage(int _damages);
 
@@ -32,5 +38,18 @@ public abstract class Enemy : MonoBehaviour
 	void Death()
 	{
 		Destroy(gameObject);
+	}
+
+	#endregion
+
+	public void Stun()
+	{
+		stunned = true;
+		stunTimer.SetTime(stunDuration);
+	}
+
+	private void OnStunTimerEnded()
+	{
+		stunned = false;
 	}
 }

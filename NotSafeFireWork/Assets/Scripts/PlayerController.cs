@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameManager.Instance.playerControllers.Add(this);
+
 
         //set default private values
         dashCooldownStart = -dashCooldown;
