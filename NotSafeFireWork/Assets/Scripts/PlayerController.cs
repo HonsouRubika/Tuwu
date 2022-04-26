@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
      *  - interraction batte x firework
      *  - d'autres patternes de tir
      *  - bouton pour changer de patternes de tir
+     *  - dash forward si le perso ne bouge pas
      */
 
     void Start()
@@ -198,7 +199,7 @@ public class PlayerController : MonoBehaviour
         if (fireworkStackActu < fireworkMaxStack && Time.time > fireworkCooldownStart + fireworkCooldown)
         {
             fireworkStackActu++;
-            Debug.Log("New firework in stack");
+            //Debug.Log("New firework in stack");
 
             if (fireworkStackActu < fireworkMaxStack)
             {
