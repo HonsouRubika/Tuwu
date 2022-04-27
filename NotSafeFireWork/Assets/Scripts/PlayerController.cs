@@ -12,11 +12,11 @@ public class PlayerController : MonoBehaviour
     public GameObject gun;
     
     //scene elem
-    [Header("Limits Settings")]
-    public Transform leftBorder;
-    public Transform rightBorder;
-    public Transform upperBorder;
-    public Transform bottomBorder;
+    //[Header("Limits Settings")]
+    private Transform leftBorder;
+    private Transform rightBorder;
+    private Transform upperBorder;
+    private Transform bottomBorder;
 
     //movement values
     [Header("Movement Settings")]
@@ -60,6 +60,27 @@ public class PlayerController : MonoBehaviour
         dashCooldownStart = -dashCooldown;
         shootCooldownStart = -shootCooldown;
         fireworkStackActu = fireworkMaxStack;
+
+        //find scene corners
+        GameObject[] limits = GameObject.FindGameObjectsWithTag("Corner");
+        foreach(GameObject corner in limits)
+        {
+            switch (corner.name)
+            {
+                case "Left":
+                    leftBorder = corner.transform;
+                    break;
+                case "Right":
+                    rightBorder = corner.transform;
+                    break;
+                case "Up":
+                    upperBorder = corner.transform;
+                    break;
+                case "Down":
+                    bottomBorder = corner.transform;
+                    break;
+            }
+        }
     }
 
 
