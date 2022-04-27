@@ -40,17 +40,34 @@ public class PlayerLifeSystem : MonoBehaviour
         playersGlobalLifeSymbolC.enabled = true;
     }
 
-    public void PlayerATakeDamage()
+    public void PlayerATakeDamage(float _damages)
     {
+        if(playerALife - _damages < 0)
+        {
+            playerALife = 0;
+        }
+        else
+        {
+            playerALife -= _damages;
+        }
         //playerALife - dégâts du feu d'artifice l'ayant touché
-        if(playerALife <= 0)
+        if (playerALife <= 0)
         {
             playerHasBeenDefeated();
         }
     }
 
-    public void PlayerBTakeDamage()
+    public void PlayerBTakeDamage(float _damages)
     {
+        if (playerBLife - _damages < 0)
+        {
+            playerBLife = 0;
+        }
+        else
+        {
+            playerBLife -= _damages;
+        }
+
         //playerBLife - dégâts du feu d'artifice l'ayant touché
         if (playerBLife <= 0)
         {
