@@ -17,7 +17,13 @@ public class UpdateRoomButton : EditorWindow
     {
         if (GUILayout.Button("UpdateEnemy"))
         {
-            //LevelHandler.Instance.RoomClearFeedback();
+            LevelHandler.Instance.RoomClearFeedback();
+        }
+
+        if (GUILayout.Button("KillEnemy"))
+        {
+            LevelHandler.Instance.ClearRoom();
         }
     }
+
 }
