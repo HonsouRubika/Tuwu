@@ -6,6 +6,7 @@ public class LevelHandler : Singleton<LevelHandler>
 {
     [SerializeField] private Animator animator;
 
+    [SerializeField] private GameObject blockerParent;
     [SerializeField] private GameObject[] blockers;
 
     [SerializeField] private List<GameObject> roomList = new List<GameObject>();
@@ -30,6 +31,7 @@ public class LevelHandler : Singleton<LevelHandler>
         }
 
         currentList = enemyInRoom0;
+        InitRoom();
     }
 
     public void ClearRoom()
@@ -41,7 +43,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom0[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom0.Clear();
                 currentList = enemyInRoom0;
                 break;
@@ -51,7 +53,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom1[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom1.Clear();
                 currentList = enemyInRoom1;
                 break;
@@ -61,7 +63,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom2[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom2.Clear();
                 currentList = enemyInRoom2;
                 break;
@@ -71,7 +73,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom3[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom3.Clear();
                 currentList = enemyInRoom3;
                 break;
@@ -81,7 +83,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom4[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom4.Clear();
                 currentList = enemyInRoom4;
                 break;
@@ -91,13 +93,64 @@ public class LevelHandler : Singleton<LevelHandler>
                 {
                     Destroy(enemyInRoom5[i].gameObject);
                 }
-
+                blockers[currentState].SetActive(false);
                 enemyInRoom0.Clear();
                 currentList = enemyInRoom5;
                 break;
             default:
                 break;
         }
+    }
+
+    public void InitRoom()
+    {
+        switch (currentState)       
+        {
+            case 0:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom0[i].gameObject.SetActive(true);
+                }
+                break;
+
+            case 1:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom1[i].gameObject.SetActive(true);
+                }
+                break;
+
+            case 2:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom2[i].gameObject.SetActive(true);
+                }
+                break;
+
+            case 3:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom3[i].gameObject.SetActive(true);
+                }
+                break;
+
+            case 4:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom4[i].gameObject.SetActive(true);
+                }
+                break;
+            case 5:
+                for (int i = 0; i <= currentList.Count - 1; i++)
+                {
+                    enemyInRoom5[i].gameObject.SetActive(true);
+                }
+                break;
+            default:
+                break;
+        }
+
+        
     }
 
     void CurrentRoom()
@@ -125,6 +178,7 @@ public class LevelHandler : Singleton<LevelHandler>
             default:
                 break;
         }
+        InitRoom();
     }
 
     //A appeler dès qu'un enemy meurt.
@@ -133,7 +187,7 @@ public class LevelHandler : Singleton<LevelHandler>
         if (currentList.Count ==0)
         {
             //Désactiver les inputs du players
-            //blockers[currentState].SetActive(false);
+            blockers[currentState].SetActive(false);
             //Trigger le clignotement de la flèche.
             //Jouer une mélodie
             //L'input des joueurs se réactivent après 2 clignotements.
