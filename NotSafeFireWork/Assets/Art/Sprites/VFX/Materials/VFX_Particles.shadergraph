@@ -1139,7 +1139,7 @@
     "m_DefaultRefNameVersion": 1,
     "m_RefNameGeneratedByDisplayName": "ParticleTexture",
     "m_DefaultReferenceName": "_ParticleTexture",
-    "m_OverrideReferenceName": "_particleTexture",
+    "m_OverrideReferenceName": "_MainTex",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
     "m_CustomSlotLabel": "",
