@@ -153,6 +153,6 @@ MonoBehaviour:
   maxHealthPoints: 800
   stunDuration: 1.5
   hitStunDuration: 0.2
-  moveSpeed: 10
+  moveSpeed: 7.5
   minDistance: 5
   maxDistance: 8

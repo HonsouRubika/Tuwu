@@ -15,13 +15,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shoot",
-                    "type": "Button",
-                    "id": "714360fe-8e36-4dcb-9359-1d83e5d98765",
-                    "expectedControlType": "Button",
-                    "processors": "",
+                    "name": "Aim",
+                    "type": "Value",
+                    "id": "47ae90d2-4ebf-4301-9595-3ef3846a29e4",
+                    "expectedControlType": "Vector2",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Dash",
@@ -33,13 +33,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Aim",
-                    "type": "Value",
-                    "id": "47ae90d2-4ebf-4301-9595-3ef3846a29e4",
-                    "expectedControlType": "Vector2",
-                    "processors": "NormalizeVector2",
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "714360fe-8e36-4dcb-9359-1d83e5d98765",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "ba3d18c8-a232-432d-9c42-f8c8b10f7fcc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -122,12 +131,12 @@
                 },
                 {
                     "name": "",
-                    "id": "9f2ae3db-dea4-4fba-ad59-600be7f82110",
-                    "path": "<Gamepad>/leftTrigger",
+                    "id": "3fc24f2b-1ce7-4cb0-88f1-b9bea9eca60f",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
-                    "processors": "Normalize(max=1)",
+                    "processors": "",
                     "groups": "Controller",
-                    "action": "Dash",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -139,6 +148,17 @@
                     "processors": "StickDeadzone(min=0.5)",
                     "groups": "Controller",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f2ae3db-dea4-4fba-ad59-600be7f82110",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "Normalize(max=1)",
+                    "groups": "Controller",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

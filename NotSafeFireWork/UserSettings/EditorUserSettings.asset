@@ -6,16 +6,21 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
-      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+      value: 5b53035003075e0f085e097a4225074441151c7b787024647d794f31b3b3676f
       flags: 0
     RecentlyUsedSceneGuid-1:
+<<<<<<< HEAD
       value: 01020c5007030a0f5b595572437a074415161b28297b7f6975281b67e6b6643e
+=======
+      value: 5a5757560101590a5d0c0e24427b5d44434e4c7a7b7a23677f2b4565b7b5353a
+>>>>>>> player-attack
       flags: 0
     RecentlyUsedSceneGuid-2:
 <<<<<<< HEAD
       value: 5a090700065108025e575f7548225b44124e197f7c7a77657b7d4f60b2b86c6b
       flags: 0
     RecentlyUsedSceneGuid-3:
+<<<<<<< HEAD
       value: 5b53035003075e0f085e097a4225074441151c7b787024647d794f31b3b3676f
       flags: 0
     RecentlyUsedSceneGuid-4:
@@ -32,6 +37,9 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-6:
       value: 525400565650085a0859582643255a4417151a297f7c7063747c1c67e1b56439
+=======
+      value: 01020c5007030a0f5b595572437a074415161b28297b7f6975281b67e6b6643e
+>>>>>>> player-attack
       flags: 0
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
