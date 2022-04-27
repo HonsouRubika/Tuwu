@@ -4,7 +4,8 @@ public class LionEnemy : Enemy
 {
 	Transform target;
 	[SerializeField] float moveSpeed = 10f;
-	[SerializeField] float triggerDistance = 5f;
+	[SerializeField] float minDistance = 5f;
+	[SerializeField] float maxDistance = 6f;
 
 	public override void DealDamage(int _damages)
 	{
@@ -26,9 +27,15 @@ public class LionEnemy : Enemy
 		if (Stunned)
 			return;
 
-		if (Vector2.Distance(target.position, transform.position) > triggerDistance)
+		float _targetDistance = Vector2.Distance(target.position, transform.position);
+
+		if (_targetDistance > maxDistance)
 		{
 			MoveTowardsTargetPlayer();
+		}
+		else if(_targetDistance < minDistance)
+		{
+			FleeTargetPlayer();
 		}
 		else
 		{
@@ -39,5 +46,10 @@ public class LionEnemy : Enemy
 	void MoveTowardsTargetPlayer()
 	{
 		transform.Translate((target.position - transform.position).normalized * Time.deltaTime * moveSpeed);
+	}
+
+	void FleeTargetPlayer()
+	{
+		transform.Translate((transform.position - target.position).normalized * Time.deltaTime * moveSpeed);
 	}
 }
