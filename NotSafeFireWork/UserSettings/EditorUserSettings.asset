@@ -12,6 +12,7 @@ EditorUserSettings:
       value: 01020c5007030a0f5b595572437a074415161b28297b7f6975281b67e6b6643e
       flags: 0
     RecentlyUsedSceneGuid-2:
+<<<<<<< HEAD
       value: 5a090700065108025e575f7548225b44124e197f7c7a77657b7d4f60b2b86c6b
       flags: 0
     RecentlyUsedSceneGuid-3:
@@ -22,6 +23,12 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-5:
       value: 5154050351010c0f5b5b557a127608444216412f2e707134752f4d36b2b3373d
+=======
+      value: 5154050351010c0f5b5b557a127608444216412f2e707134752f4d36b2b3373d
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 51070c045d050a020f575f704476064440164a7c797f7f357f2c4c37b3b36d3d
+>>>>>>> LionShoot
       flags: 0
     RecentlyUsedSceneGuid-6:
       value: 525400565650085a0859582643255a4417151a297f7c7063747c1c67e1b56439
