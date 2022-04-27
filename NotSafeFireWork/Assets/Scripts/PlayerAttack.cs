@@ -4,12 +4,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+	[Header("Params")]
 	[SerializeField] float attackLifeTime;
 	Clock attackLifeTimer;
 
 	[SerializeField] float attackCooldown;
 	Clock attackCooldownTimer;
 	bool canAttack = true;
+
+	[Header("References")]
+	[SerializeField] BulletReceiver receiver;
 
 	private void Start()
 	{
@@ -22,10 +26,11 @@ public class PlayerAttack : MonoBehaviour
 
 	public void OnAttack(InputAction.CallbackContext context)
 	{
+		Debug.Log("right bumper");
 		if (!canAttack)
 			return;
 
-		//enable collisions
+		receiver.enabled = true;
 
 		canAttack = false;
 		attackLifeTimer.SetTime(attackLifeTime);
@@ -39,7 +44,7 @@ public class PlayerAttack : MonoBehaviour
 
 	void OnAttackLifeEnded()
 	{
-		//disable collisions
+		receiver.enabled = false;
 	}
 
 	public void OnHitByBullet(Bullet bullet, Vector3 position)

@@ -125,7 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238b0999f9f5f1b4aaed065c8f06ff53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackLifeTime: 0.15
   attackCooldown: 1
+  receiver: {fileID: 5055453408226893662}
 --- !u!114 &4198204311643993655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +218,19 @@ MonoBehaviour:
     m_ActionId: 47ae90d2-4ebf-4301-9595-3ef3846a29e4
     m_ActionName: Controller/Aim[/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7950209999615275775}
+        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ba3d18c8-a232-432d-9c42-f8c8b10f7fcc
     m_ActionName: Controller/Attack[/XInputControllerWindows/rightShoulder]
   m_NeverAutoSwitchControlSchemes: 0
@@ -351,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 0}
+  emitterProfile: {fileID: 11400000, guid: e54aa281e12a68d4983a9cb1085ca646, type: 2}
   patternOrigin: {fileID: 1100195611635388027}
   playAtStart: 0
   useDefaultGizmoColor: 1
@@ -416,7 +430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4660966136966137133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
   m_Name: 
