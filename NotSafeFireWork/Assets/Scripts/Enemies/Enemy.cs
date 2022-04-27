@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
@@ -12,11 +13,18 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField] float stunDuration = 1.5f;
 	Clock stunTimer;
 
+	bool hitStunned = false;
+	public bool HitStunned { get => hitStunned; }
+	[SerializeField] float hitStunDuration = .2f;
+	Clock hitStunTimer;
+
 	internal void Init()
 	{
 		currentHealthPoints = maxHealthPoints;
 		stunTimer = new Clock();
 		stunTimer.ClockEnded += OnStunTimerEnded;
+		hitStunTimer = new Clock();
+		hitStunTimer.ClockEnded += OnHitStunTimerEnded;
 	}
 
 	#region Health system
@@ -42,14 +50,29 @@ public abstract class Enemy : MonoBehaviour
 
 	#endregion
 
+	#region Stuns
+
 	public void Stun()
 	{
 		stunned = true;
 		stunTimer.SetTime(stunDuration);
 	}
 
+	public void HitStun()
+	{
+		hitStunned = true;
+		hitStunTimer.SetTime(hitStunDuration);
+	}
+
 	private void OnStunTimerEnded()
 	{
 		stunned = false;
 	}
+
+	private void OnHitStunTimerEnded()
+	{
+		hitStunned = false;
+	}
+
+	#endregion
 }

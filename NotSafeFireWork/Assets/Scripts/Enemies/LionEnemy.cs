@@ -24,7 +24,7 @@ public class LionEnemy : Enemy
 
 	private void Update()
 	{
-		if (Stunned)
+		if (Stunned || HitStunned)
 			return;
 
 		float _targetDistance = Vector2.Distance(target.position, transform.position);
