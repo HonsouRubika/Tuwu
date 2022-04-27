@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MenuManager : MonoBehaviour
 {
 
     public GameObject creditPanel;
-    private bool isCreditsOpened;
+    public GameObject playButton;
+    public GameObject backButton;
 
     private void Awake()
     {
         creditPanel.SetActive(false);
-        isCreditsOpened = false;
     }
 
     public void ActionPlay()
@@ -26,7 +26,7 @@ public class MenuManager : MonoBehaviour
     public void ActionCredits()
     {
         creditPanel.SetActive(true);
-        isCreditsOpened = true;
+        EventSystem.current.SetSelectedGameObject(backButton);
     }
 
     public void ActionQuit()
@@ -34,9 +34,10 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnCancel(InputAction.CallbackContext context)
+    public void ActionBack()
     {
-        Debug.Log("Cancel");
+        creditPanel.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(playButton);
     }
 
 }
