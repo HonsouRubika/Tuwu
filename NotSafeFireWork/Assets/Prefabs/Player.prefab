@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 885702631762380115}
   - component: {fileID: 4198204311643993655}
   - component: {fileID: 120520952734332884}
+  - component: {fileID: -252121715679689521}
   - component: {fileID: 8425680381414144352}
   m_Layer: 0
   m_Name: Player
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4301733068453131777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50,11 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   gun: {fileID: 4660966136966137133}
-  leftBorder: {fileID: 0}
-  rightBorder: {fileID: 0}
-  upperBorder: {fileID: 0}
-  bottomBorder: {fileID: 0}
-  movementSpeed: 200
+  movementSpeed: 500
   gunDirection: {x: 0, y: 0}
   dashCurve:
     serializedVersion: 2
@@ -107,9 +104,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dashSpeed: 500
+  dashSpeed: 1250
   dashDuration: 0.6
   dashCooldown: 3
+  shootCooldown: 0.4
+  fireworkMaxStack: 3
+  fireworkStackActu: 0
+  fireworkCooldown: 5
   playerStateActu: 0
 --- !u!114 &4198204311643993655
 MonoBehaviour:
@@ -219,8 +220,21 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 120
+  m_CollisionDetection: 1
+--- !u!135 &-252121715679689521
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301733068453131777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &8425680381414144352
 SpriteRenderer:
   m_ObjectHideFlags: 0

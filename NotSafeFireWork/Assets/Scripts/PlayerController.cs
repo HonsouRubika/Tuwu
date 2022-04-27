@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour
         //set rot (quaternion needed)
         if (context.started && Time.time > shootCooldownStart + shootCooldown && fireworkStackActu > 0)
         {
+            Debug.Log("shoots");
             shootCooldownStart = Time.time;
             fireworkStackActu--;
             gun.GetComponent<BulletPro.BulletEmitter>().Play();
