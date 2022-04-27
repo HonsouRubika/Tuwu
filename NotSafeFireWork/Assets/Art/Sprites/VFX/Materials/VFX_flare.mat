@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b6c2da8da9c74e04e93edef40c2b1b78, type: 3}
+        m_Texture: {fileID: 2800000, guid: a3fa62c5582103c41854241b685d8d14, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParticleTexture:
@@ -82,6 +82,7 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 10
+    - _Flickering: 0
     - _GlossinessSource: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -103,5 +104,7 @@ Material:
     - _OutlineColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _insideColor: {r: 1, g: 1, b: 1, a: 1}
+    - _offset: {r: 0, g: 0, b: 0, a: 0}
     - _outlineColor: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+    - _tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
