@@ -235,5 +235,13 @@ public class PlayerController : MonoBehaviour
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
         //lose health
+
+        foreach(CustomParameter param in bullet.moduleParameters.parameters)
+		{
+            if(param.name == "_PowerLevel")
+			{
+                //deal dmg to player with param.floatValue
+			}
+		}
     }
 }
