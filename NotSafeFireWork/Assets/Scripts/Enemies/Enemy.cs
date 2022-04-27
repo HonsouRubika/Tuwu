@@ -18,7 +18,7 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField] float hitStunDuration = .2f;
 	Clock hitStunTimer;
 
-	internal void Init()
+	protected void Init()
 	{
 		currentHealthPoints = maxHealthPoints;
 		stunTimer = new Clock();
@@ -31,7 +31,7 @@ public abstract class Enemy : MonoBehaviour
 
 	public abstract void DealDamage(int _damages);
 
-	internal void Hit(int _damages)
+	protected void Hit(int _damages)
 	{
 		if(currentHealthPoints - _damages <= 0)
 		{

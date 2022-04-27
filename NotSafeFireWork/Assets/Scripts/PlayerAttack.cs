@@ -13,7 +13,8 @@ public class PlayerAttack : MonoBehaviour
 	bool canAttack = true;
 
 	[Header("References")]
-	[SerializeField] BulletReceiver receiver;
+	[SerializeField] BulletReceiver bulletReceiver;
+	[SerializeField] CircleCollider2D stunCollider;
 
 	private void Start()
 	{
@@ -26,11 +27,14 @@ public class PlayerAttack : MonoBehaviour
 
 	public void OnAttack(InputAction.CallbackContext context)
 	{
-		Debug.Log("right bumper");
+		if (!context.started)
+			return;
+
 		if (!canAttack)
 			return;
 
-		receiver.enabled = true;
+		bulletReceiver.enabled = true;
+		stunCollider.enabled = true;
 
 		canAttack = false;
 		attackLifeTimer.SetTime(attackLifeTime);
@@ -44,11 +48,12 @@ public class PlayerAttack : MonoBehaviour
 
 	void OnAttackLifeEnded()
 	{
-		receiver.enabled = false;
+		bulletReceiver.enabled = false;
+		stunCollider.enabled = false;
 	}
 
 	public void OnHitByBullet(Bullet bullet, Vector3 position)
 	{
-
+		//change bullet dir
 	}
 }

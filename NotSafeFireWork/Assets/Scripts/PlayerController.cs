@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using BulletPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -231,4 +232,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnHitByBullet(Bullet bullet, Vector3 position)
+    {
+        //lose health
+    }
 }
