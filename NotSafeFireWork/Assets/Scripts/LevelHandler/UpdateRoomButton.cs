@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class UpdateRoomButton : EditorWindow
 {
-    public LevelHandler LevelHandler;
+  
 
     [MenuItem("Window/Edit Mode Functions")]
     public static void ShowWindow()
@@ -17,7 +17,7 @@ public class UpdateRoomButton : EditorWindow
     {
         if (GUILayout.Button("UpdateEnemy"))
         {
-            LevelHandler.RoomClearFeedback();
+            LevelHandler.Instance.RoomClearFeedback();
         }
     }
 }

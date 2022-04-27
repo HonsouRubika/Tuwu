@@ -3642,6 +3642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockers: []
   roomList: []
+  currentList: []
   enemyInRoom0: []
   enemyInRoom1: []
   enemyInRoom2: []
