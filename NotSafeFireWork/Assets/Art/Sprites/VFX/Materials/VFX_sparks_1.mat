@@ -47,7 +47,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b6c2da8da9c74e04e93edef40c2b1b78, type: 3}
+        m_Texture: {fileID: 2800000, guid: 93a446f64b63fbc479976a871d191302, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParticleTexture:
@@ -95,7 +95,7 @@ Material:
     - _SrcBlend: 5
     - _Surface: 1
     - _ZWrite: 0
-    - _emissiveIntensity: 10
+    - _emissiveIntensity: 4
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CloudsColor: {r: 1, g: 1, b: 1, a: 1}
