@@ -26,6 +26,7 @@ EditorUserSettings:
     RecentlyUsedSceneGuid-4:
       value: 51070c045d050a020f575f704476064440164a7c797f7f357f2c4c37b3b36d3d
       flags: 0
+<<<<<<< HEAD
     RecentlyUsedSceneGuid-5:
       value: 5154050351010c0f5b5b557a127608444216412f2e707134752f4d36b2b3373d
 =======
@@ -40,6 +41,10 @@ EditorUserSettings:
 =======
       value: 01020c5007030a0f5b595572437a074415161b28297b7f6975281b67e6b6643e
 >>>>>>> player-attack
+=======
+    RecentlyUsedSceneGuid-3:
+      value: 5509055457065c5a085a5a20417a5c444f4f1d7f782c236229701f6be0b6656f
+>>>>>>> XP_LevelGestion
       flags: 0
     RecentlyUsedScenePath-0:
       value: 22424703114646680e0b0227036c6c111b07142f1f2b233e2867083debf42d
