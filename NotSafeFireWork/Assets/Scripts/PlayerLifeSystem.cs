@@ -49,6 +49,7 @@ public class PlayerLifeSystem : MonoBehaviour
         else
         {
             playerALife -= _damages;
+            if (playerAAnimator != null) playerAAnimator.SetBool("isHit", true);
         }
 
         if (playerALife <= 0)
@@ -66,6 +67,7 @@ public class PlayerLifeSystem : MonoBehaviour
         else
         {
             playerBLife -= _damages;
+            if (playerBAnimator != null) playerBAnimator.SetBool("isHit", true);
         }
 
         if (playerBLife <= 0)
