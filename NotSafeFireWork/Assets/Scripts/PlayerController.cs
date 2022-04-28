@@ -168,7 +168,6 @@ public class PlayerController : MonoBehaviour
         //set rot (quaternion needed)
         if (context.started && Time.time > shootCooldownStart + shootCooldown && fireworkStackActu > 0)
         {
-            Debug.Log("shoots");
             shootCooldownStart = Time.time;
             fireworkStackActu--;
             gun.GetComponent<BulletPro.BulletEmitter>().Play();
@@ -281,14 +280,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
-        //lose health
-
-        foreach(CustomParameter param in bullet.moduleParameters.parameters)
-		{
-            if(param.name == "_PowerLevel")
-			{
-                //deal dmg to player with param.floatValue
-			}
-		}
+        //deal dmg to player on lifeSystem with bullet.moduleParameters.GetFloat("_PowerLevel")
     }
 }
