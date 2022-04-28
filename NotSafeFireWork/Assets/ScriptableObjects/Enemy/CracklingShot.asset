@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 4743938
+  uniqueIndex: 4569799
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -73743,7 +73743,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 7374982
+  uniqueIndex: 10857349
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -103444,7 +103444,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 13355898
+  uniqueIndex: 16618281
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
