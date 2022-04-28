@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     public void ActionPlay()
     {
         // TODO : Replace TestScene here by GameScene when ready
-        // SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("XP_LevelGestion");
         Debug.Log("Link la scene de jeu dans le code (script MenuManager)");
     }
 
