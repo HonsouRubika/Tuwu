@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
 	[Header("Params")]
-	[SerializeField] int maxHealthPoints;
+	public int maxHealthPoints;
 	int currentHealthPoints;
 	public int CurrentHealthPoints { get => currentHealthPoints;}
 
@@ -56,7 +56,7 @@ public abstract class Enemy : MonoBehaviour
 
 	#region Stuns
 
-	public void Stun()
+	public virtual void Stun()
 	{
 		stunned = true;
 		stunTimer.SetTime(stunDuration);
