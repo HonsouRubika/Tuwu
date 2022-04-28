@@ -94,15 +94,14 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-
-        if (GameManager.Instance.playersJoinedCount == 1)
+        if (GameManager.Instance.playersJoinedCount == 0)
         {
             p1.SetActive(true);
             p2.SetActive(false);
             isPlayerA = true;
             animator = playerAAnimator;
         }
-        else if (GameManager.Instance.playersJoinedCount >= 2)
+        else if (GameManager.Instance.playersJoinedCount == 1)
         {
             Debug.Log("Prout");
             p1.SetActive(false);
@@ -121,11 +120,11 @@ public class PlayerController : MonoBehaviour
             movementInput = context.ReadValue<Vector2>();
         }
 
-        if (movementInput != Vector2.zero)
+        if (movementInput != Vector2.zero && animator != null)
         {
             animator.SetBool("isMove", true);
         }
-        else
+        else if (animator != null)
         {
             animator.SetBool("isMove", false);
         }
