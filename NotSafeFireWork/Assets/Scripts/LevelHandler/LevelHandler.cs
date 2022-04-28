@@ -277,18 +277,23 @@ public class LevelHandler : Singleton<LevelHandler>
         {
             case 1:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 2:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 3:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 4:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 5:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             default:
                 break;
