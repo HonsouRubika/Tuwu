@@ -56,11 +56,12 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
-		if (br.tag == "PlayerAttack")
+		if (br.tag != "PlayerAttack")
         {
             float power = bullet.moduleParameters.GetFloat("_PowerLevel");
             if (power >= 1000)
             {
+				Debug.Log("boumfort");
                 SoundManager.Instance.PlaySFX("fwExplosionStrong", SoundManager.Instance.fwSource);
             }
             else if (power >= 700)

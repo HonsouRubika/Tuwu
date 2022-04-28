@@ -48,6 +48,7 @@ public class LionEnemy : Enemy
 		else
 		{
 			//Shoot at target player
+			soundManager.PlaySFX("shootEnemies", soundManager.fxSource);
 		}
 	}
 

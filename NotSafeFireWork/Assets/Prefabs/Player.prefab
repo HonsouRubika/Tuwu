@@ -670,7 +670,7 @@ MonoBehaviour:
   killBulletOnCollision: 0
   maxSimultaneousCollisionsPerFrame: 50
   collisionTags:
-    tagList: 3
+    tagList: 67
   OnHitByBullet:
     m_PersistentCalls:
       m_Calls:
