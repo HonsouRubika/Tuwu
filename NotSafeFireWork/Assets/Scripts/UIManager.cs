@@ -5,6 +5,10 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    public PlayerLifeSystem lifeSystem;
+
+    [Space(20)]
+
     public int scoreDrawn = 0;
     public int reviveDrawn = 3;
 
@@ -13,8 +17,15 @@ public class UIManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        GetRevive();
+
         DrawScore();
         DrawRevive();        
+    }
+
+    private void GetRevive()
+    {
+        reviveDrawn = lifeSystem.playersGlobalLife;
     }
 
     private void DrawScore()
