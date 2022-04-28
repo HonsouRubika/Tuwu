@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-	int playersJoinedCount = 0;
+	public int playersJoinedCount = 0;
 	[SerializeField] GameObject enemiesGlobalParent;
 	public List<PlayerController> playerControllers = new List<PlayerController>();
 
@@ -16,7 +16,7 @@ public class GameManager : Singleton<GameManager>
 	public void OnPlayerJoined()
 	{
 		playersJoinedCount++;
-
+		
 		if(playersJoinedCount >= 2)
 		{
 			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
