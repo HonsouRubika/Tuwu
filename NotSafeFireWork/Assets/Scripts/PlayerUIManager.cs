@@ -17,6 +17,11 @@ public class PlayerUIManager : MonoBehaviour
     public Image healthBar;
     public List<GameObject> ammoIcons;
 
+    private void Start()
+    {
+        lifeSystem = GameManager.Instance.GetComponent<PlayerLifeSystem>();
+    }
+
     private void FixedUpdate()
     {
         GetHealth();
