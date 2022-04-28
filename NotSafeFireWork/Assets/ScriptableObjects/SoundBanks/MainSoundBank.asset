@@ -64,3 +64,9 @@ MonoBehaviour:
   - name: gongStartLevel
     clip: {fileID: 8300000, guid: f407cfa8a3568d748aa56d3ec05718f7, type: 3}
     volume: 1
+  - name: fwExplosionSuperStrong
+    clip: {fileID: 8300000, guid: f407cfa8a3568d748aa56d3ec05718f7, type: 3}
+    volume: 1
+  - name: shootEnemies
+    clip: {fileID: 8300000, guid: 5a7d554b4953671498ca983c560220fb, type: 3}
+    volume: 1
