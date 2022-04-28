@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     //components
     [HideInInspector]
     public Rigidbody rb;
+    public GameObject pivot;
     public GameObject gun;
     public bool isPlayerA;
     
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private float fireworkCooldownStart;
 
     //player state
-    public enum PlayerState { active, stun, dashing, aiming}
+    public enum PlayerState { active, stun, dashing}
     public int playerStateActu = (int)PlayerState.active;
 
     [Header("Sprites & Anims")]
@@ -152,7 +153,6 @@ public class PlayerController : MonoBehaviour
             if (context.ReadValue<Vector2>().magnitude != 0)
             {
                 gunDirection = context.ReadValue<Vector2>();
-                playerStateActu = (int)PlayerState.aiming; 
                 animator.SetBool("isFire", true);
             }
             else if (context.canceled)
@@ -223,9 +223,6 @@ public class PlayerController : MonoBehaviour
                     animator.SetBool("isDash", false);
                 }
                 break;
-            case (int)PlayerState.aiming:
-                //le player ne bouge pas.
-                break;
         }
 
         //check if touching borders
@@ -261,7 +258,7 @@ public class PlayerController : MonoBehaviour
         //gunDirection vector2D
         //gun.transform.LookAt(gun.transform.position + (Vector3)gunDirection, Vector3.up);
         float angle = Mathf.Atan2(-gunDirection.x, -gunDirection.y) * Mathf.Rad2Deg;
-        gun.transform.rotation = Quaternion.Euler(0,0,(180-angle)%360f);
+        pivot.transform.rotation = Quaternion.Euler(0,0,(180-angle)%360f);
     }
 
     public void ReloadFireworkStack()
