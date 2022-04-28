@@ -50,7 +50,7 @@ public class PlayerLifeSystem : MonoBehaviour
         {
             playerALife -= _damages;
         }
-        //playerALife - dégâts du feu d'artifice l'ayant touché
+
         if (playerALife <= 0)
         {
             playerHasBeenDefeated();
@@ -68,7 +68,6 @@ public class PlayerLifeSystem : MonoBehaviour
             playerBLife -= _damages;
         }
 
-        //playerBLife - dégâts du feu d'artifice l'ayant touché
         if (playerBLife <= 0)
         {
             playerHasBeenDefeated();
@@ -103,7 +102,6 @@ public class PlayerLifeSystem : MonoBehaviour
 
     private void GameOver()
     {
-        //Envoyer à l'écran de death. Rajouter une coroutine avant pour jouer les anims ?
         StartCoroutine(ToScreenDeath());
     }
 
