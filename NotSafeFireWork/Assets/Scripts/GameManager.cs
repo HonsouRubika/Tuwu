@@ -17,14 +17,14 @@ public class GameManager : Singleton<GameManager>
 	{
 		playersJoinedCount++;
 
-		if(playersJoinedCount >= 2)
+		if(playersJoinedCount >= 1)
 		{
 			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
-			EnableRoomEnemies();
+			EnableFirstRoomEnemies();
 		}
 	}
 
-	void EnableRoomEnemies()
+	void EnableFirstRoomEnemies()
 	{
 
 	}

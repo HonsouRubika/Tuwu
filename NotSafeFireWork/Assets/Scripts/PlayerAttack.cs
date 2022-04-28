@@ -54,6 +54,12 @@ public class PlayerAttack : MonoBehaviour
 
 	public void OnHitByBullet(Bullet bullet, Vector3 position)
 	{
+		EmitterProfile _profile = bullet.emitter.emitterProfile;
+		bullet.Die();
+		BulletEmitter _emitter = gameObject.AddComponent<BulletEmitter>();
+		_emitter.emitterProfile = _profile;
+		_emitter.Play();
+		//Destroy(_emitter);
 		//bullet.moduleMovement.Rotate()
 		//change bullet dir
 	}
