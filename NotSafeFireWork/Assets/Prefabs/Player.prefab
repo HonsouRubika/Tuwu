@@ -141,6 +141,7 @@ Transform:
   m_Children:
   - {fileID: 302214712559592504}
   - {fileID: 1090157494761712733}
+  - {fileID: 302214712559592504}
   - {fileID: 5852412979349217739}
   - {fileID: 1100195611635388027}
   m_Father: {fileID: 0}
@@ -556,7 +557,7 @@ GameObject:
   - component: {fileID: 5162642352536969468}
   m_Layer: 0
   m_Name: Gun
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
