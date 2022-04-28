@@ -113,6 +113,104 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
+--- !u!1 &2072205646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2072205647}
+  - component: {fileID: 2072205650}
+  - component: {fileID: 2072205649}
+  - component: {fileID: 2072205648}
+  m_Layer: 0
+  m_Name: Blockers-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2072205647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072205646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -16.76, z: 9.61}
+  m_LocalScale: {x: 1, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1616868899831575404}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2072205650
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072205646}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2072205649
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072205646}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2072205648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072205646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &984371584707738886
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +768,7 @@ Transform:
   - {fileID: 6642716772387184300}
   - {fileID: 9138332276647283351}
   - {fileID: 1426664815736260032}
+  - {fileID: 2072205647}
   m_Father: {fileID: 1616868900497586121}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1079,7 +1178,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1497,7 +1596,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4952830780212551149}
   m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 157, z: -100}
+  m_LocalPosition: {x: 0, y: 157.81, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1534,7 +1633,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1795,7 +1894,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1866,7 +1965,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1900,7 +1999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8713163388568039868}
   m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 207, z: -100}
+  m_LocalPosition: {x: 0, y: 218, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1937,7 +2036,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1971,7 +2070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8777722611310500537}
   m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 267, z: -100}
+  m_LocalPosition: {x: 0, y: 277.2, z: -100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2008,7 +2107,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2098,6 +2197,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &996461170432771283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4041984887833285724, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2118,6 +2218,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &2588991883639354803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1594790583495304508, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2138,6 +2239,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &3564250287689466150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 340836716183146921, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2158,6 +2260,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &6963945762128161218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6154380231251409229, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2178,6 +2281,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &7237139087931264206 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5882647074204130369, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2203,6 +2307,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!4 &7379707969479663077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6027464177833282922, guid: 06132e2703df3ed418183da498e94959, type: 3}
@@ -2289,6 +2394,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &2822280309754504568 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7481055342284126523, guid: a2a94d03edb2d6848853e18f7885c17a, type: 3}
@@ -2309,6 +2415,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &4454347331663230305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9018961296810567970, guid: a2a94d03edb2d6848853e18f7885c17a, type: 3}
@@ -2334,6 +2441,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &6786287225737442245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2221805726287064966, guid: a2a94d03edb2d6848853e18f7885c17a, type: 3}
@@ -2354,6 +2462,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &8045792156610646761 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3409411393017597610, guid: a2a94d03edb2d6848853e18f7885c17a, type: 3}
@@ -2374,6 +2483,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!4 &8225499526835145049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3665390179289011482, guid: a2a94d03edb2d6848853e18f7885c17a, type: 3}
@@ -2399,6 +2509,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1001 &4906096696448558257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2456,7 +2567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445733610145978226, guid: e917e95106e259341961775caf7688a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.25
+      value: -11.300018
       objectReference: {fileID: 0}
     - target: {fileID: 7983966144312917502, guid: e917e95106e259341961775caf7688a5, type: 3}
       propertyPath: m_Name
@@ -2464,7 +2575,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8155020316321878810, guid: e917e95106e259341961775caf7688a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.25
+      value: -11.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e917e95106e259341961775caf7688a5, type: 3}
@@ -2564,6 +2675,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!4 &1213398329082277035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6820729466473900305, guid: f410ea3b399b80d4c90d4aa9ba0222c9, type: 3}
@@ -2594,6 +2706,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &8383447988159349819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4190950821204361601, guid: f410ea3b399b80d4c90d4aa9ba0222c9, type: 3}
@@ -2614,6 +2727,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1001 &6722628149211967102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2721,6 +2835,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &7069183996722374182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4562528825313937496, guid: d81d89d6f85734f4baa89ea95e5fd6de, type: 3}
@@ -2741,6 +2856,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1001 &8233419059550502724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2822,6 +2938,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &1607654626112053446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7209544327710384002, guid: 59e84b7cb5957e74299c4f8587671bb9, type: 3}
@@ -2842,6 +2959,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &6025122394604999212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2440796955306012008, guid: 59e84b7cb5957e74299c4f8587671bb9, type: 3}
@@ -2862,6 +2980,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!4 &6933588444807369065 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1331929657482620461, guid: 59e84b7cb5957e74299c4f8587671bb9, type: 3}
@@ -2887,6 +3006,7 @@ MonoBehaviour:
   maxHealthPoints: 0
   stunDuration: 1.5
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
 --- !u!1 &9078976024517286853 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1134339296838558849, guid: 59e84b7cb5957e74299c4f8587671bb9, type: 3}
