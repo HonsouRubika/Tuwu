@@ -11,13 +11,20 @@ public class LevelHandler : Singleton<LevelHandler>
 
     [SerializeField] private List<GameObject> roomList = new List<GameObject>();
 
-    [SerializeField] private List<Enemy> currentList = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom0 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom1 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom2 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom3 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom4 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom5 = new List<Enemy>();
+    [SerializeField] private List<GameObject> currentList = new List<GameObject>();
+
+    [SerializeField] private GameObject enemyParent0;
+    [SerializeField] private List<GameObject> enemyInRoom0 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent1;
+    [SerializeField] private List<GameObject> enemyInRoom1 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent2;
+    [SerializeField] private List<GameObject> enemyInRoom2 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent3;
+    [SerializeField] private List<GameObject> enemyInRoom3 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent4;
+    [SerializeField] private List<GameObject> enemyInRoom4 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent5;
+    [SerializeField] private List<GameObject> enemyInRoom5 = new List<GameObject>();
 
     public static int currentState = 0;
 
@@ -30,6 +37,7 @@ public class LevelHandler : Singleton<LevelHandler>
             roomList.Add(child.gameObject);
         }
 
+        EnemyInit();
         currentList = enemyInRoom0;
         InitRoom();
     }
@@ -99,6 +107,52 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
             default:
                 break;
+        }
+    }
+
+    void EnemyInit()
+    {
+        enemyInRoom0.Clear();
+        foreach (Transform item in enemyParent0.gameObject.transform)
+        {
+            
+            enemyInRoom0.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
+        }
+
+            enemyInRoom1.Clear();
+        foreach (Transform item in enemyParent1.gameObject.transform)
+        {
+            enemyInRoom1.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
+        }
+
+            enemyInRoom2.Clear();
+        foreach (Transform item in enemyParent2.gameObject.transform)
+        {
+            enemyInRoom2.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
+        }
+
+            enemyInRoom3.Clear();
+        foreach (Transform item in enemyParent3.transform)
+        {
+            enemyInRoom3.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
+        }
+
+            enemyInRoom4.Clear();
+        foreach (Transform item in enemyParent4.transform)
+        {
+            enemyInRoom4.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
+        }
+
+            enemyInRoom5.Clear();
+        foreach (Transform item in enemyParent5.transform)
+        {
+            enemyInRoom5.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
     }
 
@@ -223,18 +277,23 @@ public class LevelHandler : Singleton<LevelHandler>
         {
             case 1:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 2:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 3:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 4:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 5:
                 animator.SetInteger("CurrentState", currentState);
+                blockers[currentState - 1].SetActive(true);
                 break;
             default:
                 break;

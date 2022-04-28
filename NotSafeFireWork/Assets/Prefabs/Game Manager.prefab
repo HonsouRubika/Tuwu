@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3958527240758160398}
   - component: {fileID: 3958527240758160397}
+  - component: {fileID: 1174617483741732581}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -44,4 +45,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1901be7bcd56645b5252db53b8944e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesGlobalParent: {fileID: 0}
   playerControllers: []
+--- !u!114 &1174617483741732581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958527240758160396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc920cb5ab5a294b9e63eb707b3ae09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerALife: 0
+  playerAMaxLife: 0
+  playerBLife: 0
+  playerBMaxLife: 0
+  playersGlobalLife: 0
+  playersGlobalLifeSymbolA: {fileID: 0}
+  playersGlobalLifeSymbolB: {fileID: 0}
+  playersGlobalLifeSymbolC: {fileID: 0}
+  reviveFX: {fileID: 0}

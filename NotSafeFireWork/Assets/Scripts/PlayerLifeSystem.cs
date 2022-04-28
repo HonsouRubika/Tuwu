@@ -24,20 +24,31 @@ public class PlayerLifeSystem : MonoBehaviour
 
     private void Awake()
     {
-        players[0] = GameManager.Instance.playerControllers[0].gameObject;
-        playerAAnimator = players[0].GetComponent<Animator>();
-        players[1] = GameManager.Instance.playerControllers[1].gameObject;
-        playerBAnimator = players[1].GetComponent<Animator>();
+        //
     }
 
     private void Start()
     {
+        //init tab
+        players = new GameObject[2];
+
         playerALife = playerAMaxLife;
         playerBLife = playerBMaxLife;
         playersGlobalLife = 3;
-        playersGlobalLifeSymbolA.enabled = true;
-        playersGlobalLifeSymbolB.enabled = true;
-        playersGlobalLifeSymbolC.enabled = true;
+    }
+
+    public void InitLifeSystem(uint playerID)
+    {
+        if (playerID == 1)
+        {
+            players[0] = GameManager.Instance.playerControllers[0].gameObject;
+            playerAAnimator = players[0].GetComponent<Animator>();
+        }
+        else
+        {
+            players[1] = GameManager.Instance.playerControllers[1].gameObject;
+            playerBAnimator = players[1].GetComponent<Animator>();
+        }
     }
 
     public void PlayerATakeDamage(float _damages)

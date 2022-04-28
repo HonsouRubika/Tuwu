@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public Rigidbody rb;
     public GameObject gun;
+    public bool isPlayerA;
     
     //scene elem
     //[Header("Limits Settings")]
@@ -41,8 +42,17 @@ public class PlayerController : MonoBehaviour
     private float fireworkCooldownStart;
 
     //player state
-    public enum PlayerState { active, stun, dashing}
+    public enum PlayerState { active, stun, dashing, aiming}
     public int playerStateActu = (int)PlayerState.active;
+
+    [Header("Sprites & Anims")]
+    //[SerializeField] Sprite playerASprite;
+    //[SerializeField] Sprite playerBSprite;
+    public GameObject p1;
+    public GameObject p2;
+    public Animator playerAAnimator;
+    public Animator playerBAnimator;
+    [HideInInspector] public Animator animator;
 
     /*
      *  TODO LIST :
@@ -55,8 +65,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
 
+        rb = GetComponent<Rigidbody>();
 
         //set default private values
         dashCooldownStart = -dashCooldown;
@@ -83,6 +93,22 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
+
+        if (GameManager.Instance.playersJoinedCount == 0)
+        {
+            p1.SetActive(true);
+            p2.SetActive(false);
+            isPlayerA = true;
+            animator = playerAAnimator;
+        }
+        else if (GameManager.Instance.playersJoinedCount == 1)
+        {
+            Debug.Log("Prout");
+            p1.SetActive(false);
+            p2.SetActive(true);
+            isPlayerA = false;
+            animator = playerBAnimator;
+        }
     }
 
 
@@ -93,7 +119,16 @@ public class PlayerController : MonoBehaviour
         {
             movementInput = context.ReadValue<Vector2>();
         }
-        
+
+        if (movementInput != Vector2.zero && animator != null)
+        {
+            animator.SetBool("isMove", true);
+        }
+        else if (animator != null)
+        {
+            animator.SetBool("isMove", false);
+        }
+
     }
 
     public void OnDash(InputAction.CallbackContext context)
@@ -102,6 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             dashCooldownStart = Time.time;
             playerStateActu = (int)PlayerState.dashing;
+            animator.SetBool("isDash", true);
         }
         else if (context.started && Time.time <= dashCooldownStart + dashCooldown)
         {
@@ -116,6 +152,13 @@ public class PlayerController : MonoBehaviour
             if (context.ReadValue<Vector2>().magnitude != 0)
             {
                 gunDirection = context.ReadValue<Vector2>();
+                playerStateActu = (int)PlayerState.aiming; 
+                animator.SetBool("isFire", true);
+            }
+            else if (context.canceled)
+            {
+                playerStateActu = (int)PlayerState.active;
+                animator.SetBool("isFire", false);
             }
         }
     }
@@ -125,7 +168,6 @@ public class PlayerController : MonoBehaviour
         //set rot (quaternion needed)
         if (context.started && Time.time > shootCooldownStart + shootCooldown && fireworkStackActu > 0)
         {
-            Debug.Log("shoots");
             shootCooldownStart = Time.time;
             fireworkStackActu--;
             gun.GetComponent<BulletPro.BulletEmitter>().Play();
@@ -178,7 +220,11 @@ public class PlayerController : MonoBehaviour
                 {
                     //dash ended, back to normal movement
                     playerStateActu = (int)PlayerState.active;
+                    animator.SetBool("isDash", false);
                 }
+                break;
+            case (int)PlayerState.aiming:
+                //le player ne bouge pas.
                 break;
         }
 
@@ -234,14 +280,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
-        //lose health
-
-        foreach(CustomParameter param in bullet.moduleParameters.parameters)
-		{
-            if(param.name == "_PowerLevel")
-			{
-                //deal dmg to player with param.floatValue
-			}
-		}
+        //deal dmg to player on lifeSystem with bullet.moduleParameters.GetFloat("_PowerLevel")
     }
 }
