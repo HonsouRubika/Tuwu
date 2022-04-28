@@ -54,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
 
 	public void OnHitByBullet(Bullet bullet, Vector3 position)
 	{
+		//bullet.moduleMovement.Rotate()
 		//change bullet dir
 	}
 }
