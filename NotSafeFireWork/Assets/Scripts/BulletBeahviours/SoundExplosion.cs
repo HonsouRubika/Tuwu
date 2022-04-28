@@ -39,23 +39,7 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletDeath();
 
-		float power = bullet.moduleParameters.GetFloat("_PowerLevel");
-        if (power >= 1000)
-        {
-			SoundManager.Instance.PlaySFX("fwExplosionWeak", SoundManager.Instance.fwSource);
-        }
-		else if (power >= 700)
-        {
 
-        }
-		else if (power >= 400)
-        {
-
-        }
-		else if(power >= 100)
-        {
-
-        }
 		// Your code here
 	}
 
@@ -72,8 +56,28 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
-		// Your code here
-	}
+		if (br.tag == "PlayerAttack")
+        {
+            float power = bullet.moduleParameters.GetFloat("_PowerLevel");
+            if (power >= 1000)
+            {
+                SoundManager.Instance.PlaySFX("fwExplosionStrong", SoundManager.Instance.fwSource);
+            }
+            else if (power >= 700)
+            {
+                SoundManager.Instance.PlaySFX("fwExplosionStrong", SoundManager.Instance.fwSource);
+            }
+            else if (power >= 400)
+            {
+                SoundManager.Instance.PlaySFX("fwExplosionMedium", SoundManager.Instance.fwSource);
+            }
+            else if (power >= 100)
+            {
+                SoundManager.Instance.PlaySFX("fwExplosionWeak", SoundManager.Instance.fwSource);
+            }
+        }
+        // Your code here
+    }
 
 	// This gets called whenever the bullet collides with a BulletReceiver AND was not colliding during the previous frame.
 	public override void OnBulletCollisionEnter(BulletReceiver br, Vector3 collisionPoint)

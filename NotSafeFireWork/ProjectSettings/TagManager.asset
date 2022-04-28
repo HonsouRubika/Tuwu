@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Corner
   - Enemy
+  - Decor
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

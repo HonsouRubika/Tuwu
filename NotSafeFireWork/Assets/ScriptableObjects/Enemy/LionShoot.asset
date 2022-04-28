@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 1481534
+  uniqueIndex: 16297765
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11160378
+  uniqueIndex: 1667368
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -12247,7 +12247,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 14532635
+  uniqueIndex: 2584308
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -16795,7 +16795,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 958071
+  uniqueIndex: 11805603
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -23907,7 +23907,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8575498
+  uniqueIndex: 1880675
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -48142,7 +48142,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 3495381
+  uniqueIndex: 10759660
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -72916,7 +72916,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 3492463
+  uniqueIndex: 16393947
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -84019,7 +84019,7 @@ MonoBehaviour:
             parameterType: 0
             relativeTo: 0
             parameterName: 
-          defaultValue: {fileID: 0}
+          defaultValue: {fileID: 8300000, guid: cc1964102b8f5c246851bd50fc1a14ec, type: 3}
         narrowType: 1
         requireComponent: 0
         typeName: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
@@ -97677,7 +97677,7 @@ MonoBehaviour:
   advancedFoldout: 0
   hasBeenSerializedOnce: 1
   focusedInstruction: 4
-  safetyForPlaymode: 145
+  safetyForPlaymode: 147
 --- !u!114 &6268382309436826723
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97691,7 +97691,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5109021
+  uniqueIndex: 13196270
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -104847,7 +104847,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 11898686
+  uniqueIndex: 15212141
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
