@@ -104,6 +104,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (GameManager.Instance.playersJoinedCount >= 2)
         {
+            Debug.Log("Prout");
             p1.SetActive(false);
             p2.SetActive(true);
             isPlayerA = false;
