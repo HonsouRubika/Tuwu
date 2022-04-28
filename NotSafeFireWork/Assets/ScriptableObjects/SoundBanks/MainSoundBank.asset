@@ -15,10 +15,10 @@ MonoBehaviour:
   clips:
   - name: sceneMusic
     clip: {fileID: 8300000, guid: 9ea6b8de920aef74fad4bc78f57985ad, type: 3}
-    volume: 0.3
+    volume: 0.4
   - name: menuMusic
     clip: {fileID: 8300000, guid: d3beede34c93d744289c8c7af11ec3e0, type: 3}
-    volume: 1
+    volume: 0.6
   - name: swingbat
     clip: {fileID: 8300000, guid: 0e3f0cc716307ba4b9ba09eee6686e38, type: 3}
     volume: 1
