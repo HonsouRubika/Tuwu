@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2760539
+  uniqueIndex: 16504466
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -2523,7 +2523,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5863828
+  uniqueIndex: 10034105
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -10119,7 +10119,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 5863130
+  uniqueIndex: 9914666
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -14667,7 +14667,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15901409
+  uniqueIndex: 15519970
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -21779,7 +21779,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 13587978
+  uniqueIndex: 173573
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -46014,7 +46014,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9015068
+  uniqueIndex: 12345603
   profile: {fileID: 11400000}
   parent: {fileID: 6268382309436826723}
   children: []
@@ -70788,7 +70788,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 15882745
+  uniqueIndex: 8003342
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -95563,7 +95563,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 3889715
+  uniqueIndex: 12076199
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children:
@@ -102829,7 +102829,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 868148
+  uniqueIndex: 6990184
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
