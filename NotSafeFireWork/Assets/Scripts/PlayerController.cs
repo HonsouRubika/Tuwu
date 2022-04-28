@@ -95,16 +95,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (GameManager.Instance.playersJoinedCount == 0)
+        if (GameManager.Instance.playersJoinedCount == 1)
         {
             p1.SetActive(true);
             p2.SetActive(false);
             isPlayerA = true;
             animator = playerAAnimator;
         }
-        else if (GameManager.Instance.playersJoinedCount == 1)
+        else if (GameManager.Instance.playersJoinedCount >= 2)
         {
-            Debug.Log("Prout");
             p1.SetActive(false);
             p2.SetActive(true);
             isPlayerA = false;
@@ -153,18 +152,17 @@ public class PlayerController : MonoBehaviour
             if (context.ReadValue<Vector2>().magnitude != 0)
             {
                 gunDirection = context.ReadValue<Vector2>();
-                animator.SetBool("isFire", true);
             }
             else if (context.canceled)
             {
                 playerStateActu = (int)PlayerState.active;
-                animator.SetBool("isFire", false);
             }
         }
     }
 
     public void OnShoot(InputAction.CallbackContext context)
     {
+        StartCoroutine(Shooting());
         //set rot (quaternion needed)
         if (context.started && Time.time > shootCooldownStart + shootCooldown && fireworkStackActu > 0)
         {
@@ -278,5 +276,13 @@ public class PlayerController : MonoBehaviour
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
         //deal dmg to player on lifeSystem with bullet.moduleParameters.GetFloat("_PowerLevel")
+    }
+
+    private IEnumerator Shooting()
+    {
+        animator.SetBool("isFire", true);
+        yield return new WaitForSeconds(0.4f);
+        animator.SetBool("isFire", false);
+        yield return null;
     }
 }
