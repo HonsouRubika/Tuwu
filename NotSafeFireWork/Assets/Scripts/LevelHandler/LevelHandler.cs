@@ -11,13 +11,20 @@ public class LevelHandler : Singleton<LevelHandler>
 
     [SerializeField] private List<GameObject> roomList = new List<GameObject>();
 
-    [SerializeField] private List<Enemy> currentList = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom0 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom1 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom2 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom3 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom4 = new List<Enemy>();
-    [SerializeField] private List<Enemy> enemyInRoom5 = new List<Enemy>();
+    [SerializeField] private List<GameObject> currentList = new List<GameObject>();
+
+    [SerializeField] private GameObject enemyParent0;
+    [SerializeField] private List<GameObject> enemyInRoom0 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent1;
+    [SerializeField] private List<GameObject> enemyInRoom1 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent2;
+    [SerializeField] private List<GameObject> enemyInRoom2 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent3;
+    [SerializeField] private List<GameObject> enemyInRoom3 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent4;
+    [SerializeField] private List<GameObject> enemyInRoom4 = new List<GameObject>();
+    [SerializeField] private GameObject enemyParent5;
+    [SerializeField] private List<GameObject> enemyInRoom5 = new List<GameObject>();
 
     public static int currentState = 0;
 
@@ -30,6 +37,7 @@ public class LevelHandler : Singleton<LevelHandler>
             roomList.Add(child.gameObject);
         }
 
+        EnemyInit();
         currentList = enemyInRoom0;
         InitRoom();
     }
@@ -99,6 +107,44 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
             default:
                 break;
+        }
+    }
+
+    void EnemyInit()
+    {
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
+        }
+
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
+        }
+
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
+        }
+
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
+        }
+
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
+        }
+        foreach (Transform item in enemyParent0.transform)
+        {
+            enemyInRoom0.Add(item.gameObject);
+            item.gameObject.SetActive(false);
         }
     }
 

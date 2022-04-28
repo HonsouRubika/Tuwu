@@ -398,6 +398,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 41253436372742786, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204173230882387251, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
     - target: {fileID: 1616868899637788958, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
       propertyPath: m_ChildCameras.Array.size
       value: 0
@@ -450,5 +458,94 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1616868900895748929, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: enemyInRoom1.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1616868900895748929, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: enemyInRoom1.Array.data[0]
+      value: 
+      objectReference: {fileID: 1616868899548518203}
+    - target: {fileID: 1616868900895748929, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: enemyInRoom1.Array.data[1]
+      value: 
+      objectReference: {fileID: 1616868899548518202}
+    - target: {fileID: 1616868900895748929, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: enemyInRoom1.Array.data[2]
+      value: 
+      objectReference: {fileID: 1616868899548518201}
+    - target: {fileID: 1616868901148615293, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056608790004191549, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909841555491199716, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454347331663230305, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924961141472524214, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222037827151695952, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237139087931264206, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946804429796751512, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9039581869579910759, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 2.1213872
+      objectReference: {fileID: 0}
+    - target: {fileID: 9078976024517286853, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+      propertyPath: m_Name
+      value: EnemyParent2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+--- !u!114 &1616868899548518201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 998110818147933204, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+  m_PrefabInstance: {fileID: 1616868899548518200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507f97e27f452a746b7d7829ed2c3d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1616868899548518202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2981920777345801863, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+  m_PrefabInstance: {fileID: 1616868899548518200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507f97e27f452a746b7d7829ed2c3d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1616868899548518203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3944859354831070507, guid: d6c0fa7c6f8c9fa45a25296157b91e26, type: 3}
+  m_PrefabInstance: {fileID: 1616868899548518200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 507f97e27f452a746b7d7829ed2c3d5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
