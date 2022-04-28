@@ -112,39 +112,47 @@ public class LevelHandler : Singleton<LevelHandler>
 
     void EnemyInit()
     {
-        foreach (Transform item in enemyParent0.transform)
+        enemyInRoom0.Clear();
+        foreach (Transform item in enemyParent0.gameObject.transform)
         {
+            
             enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            //item.gameObject.SetActive(false);
         }
 
-        foreach (Transform item in enemyParent0.transform)
+            enemyInRoom1.Clear();
+        foreach (Transform item in enemyParent1.gameObject.transform)
         {
-            enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            enemyInRoom1.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
 
-        foreach (Transform item in enemyParent0.transform)
+            enemyInRoom2.Clear();
+        foreach (Transform item in enemyParent2.gameObject.transform)
         {
-            enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            enemyInRoom2.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
 
-        foreach (Transform item in enemyParent0.transform)
+            enemyInRoom3.Clear();
+        foreach (Transform item in enemyParent3.transform)
         {
-            enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            enemyInRoom3.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
 
-        foreach (Transform item in enemyParent0.transform)
+            enemyInRoom4.Clear();
+        foreach (Transform item in enemyParent4.transform)
         {
-            enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            enemyInRoom4.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
-        foreach (Transform item in enemyParent0.transform)
+
+            enemyInRoom5.Clear();
+        foreach (Transform item in enemyParent5.transform)
         {
-            enemyInRoom0.Add(item.gameObject);
-            item.gameObject.SetActive(false);
+            enemyInRoom5.Add(item.gameObject);
+            //item.gameObject.SetActive(false);
         }
     }
 
