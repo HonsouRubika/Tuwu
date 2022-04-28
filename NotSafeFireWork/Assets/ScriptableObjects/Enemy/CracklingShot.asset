@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 4569799
+  uniqueIndex: 3114935
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 499524
+  uniqueIndex: 3438819
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -13074,7 +13074,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 9613755
+  uniqueIndex: 15750994
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -17622,7 +17622,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14470530
+  uniqueIndex: 5172938
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -24734,7 +24734,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8505612
+  uniqueIndex: 10518436
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -73743,7 +73743,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 10857349
+  uniqueIndex: 565364
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -103444,7 +103444,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 16618281
+  uniqueIndex: 5600679
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
