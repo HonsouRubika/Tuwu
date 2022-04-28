@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5939019178794377257, guid: 35c40623b716ca94db81e06b0f5c5ac6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -171,7 +171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 4963908408098834496, guid: 35c40623b716ca94db81e06b0f5c5ac6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -299,7 +299,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6488441324248146285, guid: 35c40623b716ca94db81e06b0f5c5ac6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -427,10 +427,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -531463040724824521, guid: 35c40623b716ca94db81e06b0f5c5ac6, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -561,9 +561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInMenu: 0
-  sceneMusic: {fileID: 8300000, guid: 9ea6b8de920aef74fad4bc78f57985ad, type: 3}
-  menuMusic: {fileID: 8300000, guid: d3beede34c93d744289c8c7af11ec3e0, type: 3}
-  musicSource: {fileID: 4738641301285503422}
+  musicSource: {fileID: 24880620884101512}
   fwSource: {fileID: 4738641301285503422}
   fxSource: {fileID: 686728960195719639}
   uiSource: {fileID: 4965438738809739325}
+  soundBank: {fileID: 11400000, guid: e23316026d3b01044a289aa687ac69ac, type: 2}

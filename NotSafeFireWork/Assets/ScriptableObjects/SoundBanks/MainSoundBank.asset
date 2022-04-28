@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8f769b7de248d4d8e97030ad0d1fef, type: 3}
+  m_Name: MainSoundBank
+  m_EditorClassIdentifier: 
+  clips:
+  - name: sceneMusic
+    clip: {fileID: 8300000, guid: 9ea6b8de920aef74fad4bc78f57985ad, type: 3}
+    volume: 0.3
+  - name: menuMusic
+    clip: {fileID: 8300000, guid: d3beede34c93d744289c8c7af11ec3e0, type: 3}
+    volume: 1
+  - name: swingbat
+    clip: {fileID: 8300000, guid: 0e3f0cc716307ba4b9ba09eee6686e38, type: 3}
+    volume: 1
+  - name: dash
+    clip: {fileID: 8300000, guid: d85b620319fa02542b892246c5635754, type: 3}
+    volume: 1
+  - name: goodBatHit
+    clip: {fileID: 8300000, guid: a11adeeab0f6eb74da6a1a536bf51b5d, type: 3}
+    volume: 1
+  - name: normalBatHit
+    clip: {fileID: 8300000, guid: 9992e1cb3dec62a418b558f6673ae666, type: 3}
+    volume: 1
+  - name: cacBatHit
+    clip: {fileID: 8300000, guid: 5250bf8801a94bf48bbb3e1c82c1e7db, type: 3}
+    volume: 1
+  - name: noAmmo
+    clip: {fileID: 8300000, guid: cd8b2a4e8ad203b4fa1cea6aa37437ae, type: 3}
+    volume: 1
+  - name: charaHurt
+    clip: {fileID: 8300000, guid: 0d48bb5adc1b85b47b2d10f76470a2b5, type: 3}
+    volume: 1
+  - name: armorResist
+    clip: {fileID: 8300000, guid: 07c8721b129a3704abf5e2e2306a988a, type: 3}
+    volume: 1
+  - name: lanternHurt
+    clip: {fileID: 8300000, guid: 71a913bdca5ad9c47b36768426deb3d2, type: 3}
+    volume: 1
+  - name: lionHurt
+    clip: {fileID: 8300000, guid: 1e237d82657ad2142bc0907a9ad30a5f, type: 3}
+    volume: 1
+  - name: fwExplosionWeak
+    clip: {fileID: 8300000, guid: cc1964102b8f5c246851bd50fc1a14ec, type: 3}
+    volume: 1
+  - name: fwExplosionMedium
+    clip: {fileID: 8300000, guid: 6863fc032fb52264a935f2673d6d1f83, type: 3}
+    volume: 1
+  - name: fwExplosionStrong
+    clip: {fileID: 8300000, guid: 063ef4f4f595bc346970f655883488dd, type: 3}
+    volume: 1
+  - name: cracklingFW
+    clip: {fileID: 8300000, guid: d43cddfbad5dced4baad196420caf46e, type: 3}
+    volume: 1
+  - name: gongStartLevel
+    clip: {fileID: 8300000, guid: f407cfa8a3568d748aa56d3ec05718f7, type: 3}
+    volume: 1
