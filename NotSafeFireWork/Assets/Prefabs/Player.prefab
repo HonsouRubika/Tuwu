@@ -162,7 +162,7 @@ MonoBehaviour:
   pivot: {fileID: 7200368004916221998}
   gun: {fileID: 4660966136966137133}
   isPlayerA: 0
-  movementSpeed: 500
+  movementSpeed: 650
   gunDirection: {x: 0, y: 0}
   dashCurve:
     serializedVersion: 2
