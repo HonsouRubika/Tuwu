@@ -227,7 +227,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0, g: 0.08572531, b: 1, a: 1}
-        key1: {r: 0.60365367, g: 1, b: 0, a: 1}
+        key1: {r: 0.26606238, g: 1, b: 0, a: 1}
         key2: {r: 0.60365367, g: 1, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1031,7 +1031,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
     - serializedVersion: 2
-      time: 0.25
+      time: 0.2
       countCurve:
         serializedVersion: 2
         minMaxState: 0
