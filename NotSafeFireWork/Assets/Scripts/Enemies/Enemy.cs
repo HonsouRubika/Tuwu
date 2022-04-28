@@ -18,6 +18,9 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField] float hitStunDuration = .2f;
 	Clock hitStunTimer;
 
+	//sounds
+	[HideInInspector]
+	public SoundManager soundManager;
 	protected void Init()
 	{
 		currentHealthPoints = maxHealthPoints;
@@ -25,6 +28,7 @@ public abstract class Enemy : MonoBehaviour
 		stunTimer.ClockEnded += OnStunTimerEnded;
 		hitStunTimer = new Clock();
 		hitStunTimer.ClockEnded += OnHitStunTimerEnded;
+		soundManager = SoundManager.Instance;
 	}
 
 	#region Health system

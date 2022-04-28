@@ -7,13 +7,21 @@ public class LionEnemy : Enemy
 	[SerializeField] float minDistance = 5f;
 	[SerializeField] float maxDistance = 6f;
 
+
 	public override void DealDamage(int _damages)
 	{
 		//Change 400 with tier 1 damages
 		if (_damages < 400)
-			return;
+		{
+			soundManager.PlaySFX("armorResist", soundManager.fxSource);
+			
+		}
+        else
+        {
+			Hit(_damages);
+			soundManager.PlaySFX("lionHurt", soundManager.fxSource);
+		}
 
-		Hit(_damages);
 	}
 
 	private void Start()
