@@ -371,7 +371,7 @@ MonoBehaviour:
   soundManager: {fileID: 0}
   moveSpeed: 7.5
   minDistance: 8
-  maxDistance: 15
+  maxDistance: 18
   attackCooldown: 3
   animator: {fileID: 5158754535097194699}
   sr: {fileID: 136445977798561751}
