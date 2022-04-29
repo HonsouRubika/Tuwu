@@ -203,8 +203,6 @@ public class LevelHandler : Singleton<LevelHandler>
             default:
                 break;
         }
-
-        
     }
 
     void CurrentRoom()
@@ -240,7 +238,6 @@ public class LevelHandler : Singleton<LevelHandler>
     {
         if (currentList.Count ==0)
         {
-            //Désactiver les inputs du players
             blockers[currentState].SetActive(false);
             //Trigger le clignotement de la flèche.
             //Jouer une mélodie
