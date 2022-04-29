@@ -22,12 +22,14 @@ public class GauDingEnemy : Enemy
 	[SerializeField] float splitterCooldown;
 
 	[Header("References")]
+	[SerializeField] GameObject emitterObject;
 	[SerializeField] BulletEmitter lionEmitter;
 	[SerializeField] BulletEmitter cracklingEmitter;
 	[SerializeField] BulletEmitter shotgunEmitter;
 	[SerializeField] BulletEmitter splitterEmitter;
 
 	Transform player1, player2;
+	Transform target;
 	public GauDingAttackState attackState = GauDingAttackState.Crackling;
 	HorizontalMoveDir moveDir = HorizontalMoveDir.Left;
 
@@ -85,75 +87,7 @@ public class GauDingEnemy : Enemy
 
         }
 
-		if (Move())
-        {
 			Attack();
-		}
-
-
-	}
-
-	bool Move()
-	{
-		if (Mathf.Abs(transform.position.y - player1.transform.position.y) < minDistanceWithPlayers ||
-			Mathf.Abs(transform.position.y - player2.transform.position.y) < minDistanceWithPlayers)
-		{
-			moveDir = HorizontalMoveDir.Left;
-
-			if(transform.position.y < topBorder.position.y)
-			{
-				transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
-				animator.SetBool("isMove", true);
-			}
-
-			return false;
-		}
-
-		if (Mathf.Abs(transform.position.y - player1.transform.position.y) > maxDistanceWithPlayers ||
-			Mathf.Abs(transform.position.y - player2.transform.position.y) > maxDistanceWithPlayers)
-		{
-			moveDir = HorizontalMoveDir.Left;
-
-			if(transform.position.y > bottomBorder.position.y)
-			{
-				transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
-				animator.SetBool("isMove", true);
-			}
-
-			return false;
-		}
-		
-
-		switch(moveDir)
-		{
-			case HorizontalMoveDir.Left:
-				if (transform.position.x > leftBorder.position.x)
-				{
-					transform.Translate(Vector3.left * Time.deltaTime * moveSpeed);
-				}
-				else
-				{
-					moveDir = HorizontalMoveDir.Right;
-				}
-				break;
-
-			case HorizontalMoveDir.Right:
-				if(transform.position.x < rightBorder.position.x)
-				{
-					transform.Translate(Vector3.right * Time.deltaTime * moveSpeed);
-				}
-				else
-				{
-					moveDir = HorizontalMoveDir.Left;
-				}
-				break;
-
-			default:
-				throw new System.ArgumentException("case not implemented");
-		}
-
-		return true;
-
 	}
 
 	void Attack()
@@ -162,23 +96,35 @@ public class GauDingEnemy : Enemy
 			return;
 
 		canAttack = false;
+
+		int ran = Random.Range(0, 2);
+		if (ran == 0)
+			target = player1;
+		else
+			target = player2;
+
 		animator.SetTrigger("Attack");
+
 		switch (attackState)
 		{
 			case GauDingAttackState.Lion:
 				attackTimer.SetTime(lionCooldown);
+				emitterObject.transform.parent.up = emitterObject.transform.parent.position - target.position;
 				lionEmitter.Play();
 				break;
 			case GauDingAttackState.Crackling:
 				attackTimer.SetTime(cracklingCooldown);
+				emitterObject.transform.parent.up = emitterObject.transform.parent.position - target.position;
 				cracklingEmitter.Play();
 				break;
 			case GauDingAttackState.Shotgun:
 				attackTimer.SetTime(shotgunCooldown);
+				emitterObject.transform.parent.up = emitterObject.transform.parent.position - target.position;
 				shotgunEmitter.Play();
 				break;
 			case GauDingAttackState.Splitter:
 				attackTimer.SetTime(splitterCooldown);
+				emitterObject.transform.parent.up = emitterObject.transform.parent.position - target.position;
 				splitterEmitter.Play();
 				break;
 			default:

@@ -79,7 +79,7 @@ public class PlayerLifeSystem : MonoBehaviour
         SoundManager.Instance.PlaySFX("charaHurt", SoundManager.Instance.fxSource);
 
         canTakeDamageA = false;
-        invincibilityTimerA.SetTime(1.2f);
+        invincibilityTimerA.SetTime(.6f);
 
         if(playerALife - _damages < 0)
         {
@@ -105,7 +105,7 @@ public class PlayerLifeSystem : MonoBehaviour
         SoundManager.Instance.PlaySFX("charaHurt", SoundManager.Instance.fxSource);
 
         canTakeDamageB = false;
-        invincibilityTimerB.SetTime(1.2f);
+        invincibilityTimerB.SetTime(.6f);
 
         if (playerBLife - _damages < 0)
         {
