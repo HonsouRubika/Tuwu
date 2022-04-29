@@ -12,10 +12,6 @@ public class PlayerLifeSystem : MonoBehaviour
     public float playerBMaxLife;
     public int playersGlobalLife;
 
-    public Image playersGlobalLifeSymbolA;
-    public Image playersGlobalLifeSymbolB;
-    public Image playersGlobalLifeSymbolC;
-
     public ParticleSystem reviveFX;
 
     private GameObject[] players;
@@ -130,15 +126,9 @@ public class PlayerLifeSystem : MonoBehaviour
         switch (playersGlobalLife)
         {
             case 2:
-                playersGlobalLifeSymbolA.enabled = false;
-                playersGlobalLifeSymbolB.enabled = true;
-                playersGlobalLifeSymbolC.enabled = true;
                 Revive();
                 break;
             case 1:
-                playersGlobalLifeSymbolA.enabled = false;
-                playersGlobalLifeSymbolB.enabled = false;
-                playersGlobalLifeSymbolC.enabled = true;
                 Revive();
                 break;
             case 0:
@@ -175,7 +165,7 @@ public class PlayerLifeSystem : MonoBehaviour
         }
         new WaitForSeconds(0.5f);
         yield return null;
-        SceneManager.LoadScene("Death Screen");
+        UIManager.Instance.EnableEndScreen(false);
     }
     private IEnumerator ReviveAnimation()
     {
