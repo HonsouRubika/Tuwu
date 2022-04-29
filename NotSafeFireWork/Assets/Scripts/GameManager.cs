@@ -16,11 +16,6 @@ public class GameManager : Singleton<GameManager>
 		pls = GetComponent<PlayerLifeSystem>();
 	}
 
-    private void OnDisable()
-    {
-		PlayerPrefs.SetInt("score", playerScore);
-    }
-
     public void OnPlayerJoined()
 	{
 		playersJoinedCount++;
