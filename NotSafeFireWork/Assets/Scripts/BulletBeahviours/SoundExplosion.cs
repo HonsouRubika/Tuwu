@@ -19,6 +19,8 @@ public class SoundExplosion : BaseBulletBehaviour {
 	// After bullet's death, you can delay this script's death : use this.lifetimeAfterBulletDeath.
 
 	// Use this for initialization (instead of Start)
+
+	private bool didCollide = false;
 	public override void OnBulletBirth ()
 	{
 		base.OnBulletBirth();
@@ -49,6 +51,10 @@ public class SoundExplosion : BaseBulletBehaviour {
 		base.OnBehaviourDeath();
 
 		// Your code here
+		if (!didCollide)
+		{
+			bullet.modulePatterns.Play();
+		}
 	}
 
 	// This gets called whenever the bullet collides with a BulletReceiver. The most common callback.
@@ -86,6 +92,10 @@ public class SoundExplosion : BaseBulletBehaviour {
 		base.OnBulletCollisionEnter(br, collisionPoint);
 
 		// Your code here
+
+		if (br.tag == "Player" || br.tag == "PlayerAttack" || br.tag == "Enemy"){
+			didCollide = true;
+        }
 	}
 
 	// This gets called whenever the bullet stops colliding with any BulletReceiver.
