@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15516282
+  uniqueIndex: 12959690
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -13122,7 +13122,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2203568
+  uniqueIndex: 3455444
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -73791,7 +73791,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9559505
+  uniqueIndex: 11810871
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -98566,7 +98566,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7674466
+  uniqueIndex: 10784285
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []

@@ -5,88 +5,116 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 {
-	[Header("Params")]
-	[SerializeField] float attackLifeTime;
-	Clock attackLifeTimer;
+    [Header("Params")]
+    [SerializeField] float attackLifeTime;
+    Clock attackLifeTimer;
 
-	[SerializeField] float attackCooldown;
-	Clock attackCooldownTimer;
-	bool canAttack = true;
+    [SerializeField] float attackCooldown;
+    Clock attackCooldownTimer;
+    bool canAttack = true;
 
-	[Header("References")]
-	[SerializeField] BulletReceiver bulletReceiver;
-	[SerializeField] CircleCollider2D stunCollider;
-	[SerializeField] GameObject gunObject;
-	[SerializeField] GameObject vfxSlash;
+    [Header("References")]
+    [SerializeField] BulletReceiver bulletReceiver;
+    [SerializeField] CircleCollider2D stunCollider;
+    [SerializeField] GameObject gunObject;
+    [SerializeField] GameObject vfxSlash;
 
-	//sounds
-	SoundManager soundManager;
-	private void Start()
-	{
-		soundManager = SoundManager.Instance;
-		attackCooldownTimer = new Clock();
-		attackCooldownTimer.ClockEnded += OnAttackCooldownEnded;
+    //sounds
+    SoundManager soundManager;
+    private void Start()
+    {
+        soundManager = SoundManager.Instance;
+        attackCooldownTimer = new Clock();
+        attackCooldownTimer.ClockEnded += OnAttackCooldownEnded;
 
-		attackLifeTimer = new Clock();
-		attackLifeTimer.ClockEnded += OnAttackLifeEnded;
-	}
+        attackLifeTimer = new Clock();
+        attackLifeTimer.ClockEnded += OnAttackLifeEnded;
+    }
 
-	public void OnAttack(InputAction.CallbackContext context)
-	{
-		if (!context.started)
-			return;
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
 
-		if (!canAttack)
-			return;
+        if (!canAttack)
+            return;
 
-		bulletReceiver.enabled = true;
-		stunCollider.enabled = true;
-		soundManager.PlaySFX("swingBat", soundManager.fxSource);
-		vfxSlash.SetActive(true);
-		canAttack = false;
-		attackLifeTimer.SetTime(attackLifeTime);
-		attackCooldownTimer.SetTime(attackCooldown);
-	}
+        bulletReceiver.enabled = true;
+        stunCollider.enabled = true;
+        soundManager.PlaySFX("swingBat", soundManager.fxSource);
+        vfxSlash.SetActive(true);
+        canAttack = false;
+        attackLifeTimer.SetTime(attackLifeTime);
+        attackCooldownTimer.SetTime(attackCooldown);
+    }
 
-	void OnAttackCooldownEnded()
-	{
-		canAttack = true;
-	}
+    void OnAttackCooldownEnded()
+    {
+        canAttack = true;
+    }
 
-	void OnAttackLifeEnded()
-	{
-		vfxSlash.SetActive(false);
-		bulletReceiver.enabled = false;
-		stunCollider.enabled = false;
-	}
+    void OnAttackLifeEnded()
+    {
+        vfxSlash.SetActive(false);
+        bulletReceiver.enabled = false;
+        stunCollider.enabled = false;
+    }
 
-	public void OnHitByBullet(Bullet bullet, Vector3 position)
-	{
+    public void OnHitByBullet(Bullet bullet, Vector3 position)
+    {
+        if (bullet.moduleParameters.GetString("_Sender") == "playerA" && GetComponent<PlayerController>().isPlayerA)
+        {
+            //do nothing
+            //Debug.Log("nope");
+            //Debug.Log(bullet.moduleParameters.GetString("_Sender") + " ; " + GetComponent<PlayerController>().isPlayerA);
+        }
+        else if (bullet.moduleParameters.GetString("_Sender") == "playerB" && !GetComponent<PlayerController>().isPlayerA)
+        {
+            //do nothing
+            //Debug.Log("nope");
+            //Debug.Log(bullet.moduleParameters.GetString("_Sender") + " ; " + !GetComponent<PlayerController>().isPlayerA);
+        }
+        else
+        {
+            //from another player or enemy
+            EmitterProfile _profile = bullet.emitter.emitterProfile;
+            float power = bullet.moduleParameters.GetFloat("_PowerLevel");
+            bullet.Die();
+            var offset = power/100 * bullet.moduleCollision.scale;
 
-		
 
-		EmitterProfile _profile = bullet.emitter.emitterProfile;
-		float power = bullet.moduleParameters.GetFloat("_PowerLevel");
-		bullet.Die();
-		power += Vector3.Distance(position, transform.position) * 50;
-		BulletEmitter _emitter = gunObject.AddComponent<BulletEmitter>();
+            //Debug.Log(power/100 + " ; " + bullet.moduleCollision.scale);
 
-		_emitter.emitterProfile = _profile;
+            power += Vector3.Distance(position, transform.position) * 50;
+            BulletEmitter _emitter = gunObject.AddComponent<BulletEmitter>();
 
-		_emitter.Play();
-		StartCoroutine(SetBulletPower(_emitter, power));
-	}
+            var oldPos = gunObject.transform.position;
 
-	IEnumerator SetBulletPower(BulletEmitter _emitter, float _power)
-	{
-		yield return new WaitForEndOfFrame();
-		yield return new WaitForEndOfFrame();
-		yield return new WaitForEndOfFrame();
-		if (_power > 1000)
-			_power = 1000;
 
-		if(_emitter.bullets.Count > 0)
-			_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
-		//_emitter.bullets[0].moduleMovement.baseScale += 1 ;
-	}
+            gunObject.transform.position += gunObject.transform.up * offset;
+
+
+            _emitter.emitterProfile = _profile;
+
+            _emitter.Play();
+
+            gunObject.transform.position = oldPos;
+            StartCoroutine(SetBulletPower(_emitter, power));
+        }
+
+
+    }
+
+    IEnumerator SetBulletPower(BulletEmitter _emitter, float _power)
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        if (_power > 1000)
+            _power = 1000;
+
+        if (_emitter.bullets.Count > 0)
+            _emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
+        _emitter.bullets[0].moduleMovement.baseScale *= 1.5f;
+    }
 }

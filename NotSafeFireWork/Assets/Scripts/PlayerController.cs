@@ -173,6 +173,7 @@ public class PlayerController : MonoBehaviour
             shootCooldownStart = Time.time;
             fireworkStackActu--;
             gun.GetComponent<BulletPro.BulletEmitter>().Play();
+            StartCoroutine(SetSender());
             soundManager.PlaySFX("shootPlayer",soundManager.fwSource);
             //start reloading timer
             if (fireworkCooldownStart + fireworkCooldown < Time.time) {
@@ -194,6 +195,21 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("No more firework to shoot");
         }
 
+    }
+
+    private IEnumerator SetSender()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (isPlayerA)
+        {
+            gun.GetComponent<BulletPro.BulletEmitter>().bullets[0].moduleParameters.SetString("_Sender", "playerA");
+        }
+        else
+        {
+            gun.GetComponent<BulletPro.BulletEmitter>().bullets[0].moduleParameters.SetString("_Sender", "playerB");
+        }
+        
+        yield return null;
     }
 
     void FixedUpdate()
