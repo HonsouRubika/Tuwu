@@ -228,6 +228,9 @@ MonoBehaviour:
   playerAAnimator: {fileID: 6978363021715957807}
   playerBAnimator: {fileID: 3736259111004046548}
   animator: {fileID: 0}
+  goodReanimationFeedback: {fileID: 0}
+  reanimationFeedbackA: {fileID: 6332957203263865621, guid: f1cebc07be9066d4d969b2cd4f72aef0, type: 3}
+  reanimationFeedbackB: {fileID: 5760232636154190319, guid: 853189baaec5abf4aa8234f9cc092d88, type: 3}
 --- !u!114 &7950209999615275775
 MonoBehaviour:
   m_ObjectHideFlags: 0
