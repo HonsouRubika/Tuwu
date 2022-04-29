@@ -39,10 +39,10 @@ MonoBehaviour:
     volume: 0.3
   - name: charaHurt
     clip: {fileID: 8300000, guid: 0d48bb5adc1b85b47b2d10f76470a2b5, type: 3}
-    volume: 0.8
+    volume: 0.6
   - name: armorResist
     clip: {fileID: 8300000, guid: 07c8721b129a3704abf5e2e2306a988a, type: 3}
-    volume: 1
+    volume: 0.1
   - name: lanternHurt
     clip: {fileID: 8300000, guid: 71a913bdca5ad9c47b36768426deb3d2, type: 3}
     volume: 1
