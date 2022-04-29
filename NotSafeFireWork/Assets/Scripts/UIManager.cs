@@ -37,7 +37,14 @@ public class UIManager : MonoBehaviour
 
     private void GetScore()
     {
-        scoreDrawn = gameManager.playerScore;
+        if(scoreDrawn < gameManager.playerScore) {
+            scoreDrawn += 1;
+        }
+
+        if (scoreDrawn > gameManager.playerScore)
+        {
+            scoreDrawn -= 1;
+        }
     }
 
     private void DrawScore()
