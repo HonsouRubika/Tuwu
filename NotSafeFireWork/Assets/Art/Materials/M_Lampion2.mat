@@ -89,7 +89,7 @@ Material:
     - _Saturation: 1
     - _Value: 0
     - _alphaYesNo: 1
-    - _emissiveIntensity: 5.6
+    - _emissiveIntensity: 1.5
     - _glossinessFactor: 0.5
     m_Colors:
     - _Tilling: {r: 1, g: 1, b: 0, a: 0}
