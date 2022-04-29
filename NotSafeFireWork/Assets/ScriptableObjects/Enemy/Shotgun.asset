@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 6889239
+  uniqueIndex: 1327501
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -71641,7 +71641,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8447105
+  uniqueIndex: 7951758
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -96416,7 +96416,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 14487984
+  uniqueIndex: 153708
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []

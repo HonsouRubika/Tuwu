@@ -250,6 +250,7 @@ MonoBehaviour:
   bulletReceiver: {fileID: 5055453408226893662}
   stunCollider: {fileID: 5162642352536969468}
   gunObject: {fileID: 4660966136966137133}
+  vfxSlash: {fileID: 6584160570472812983}
 --- !u!114 &4198204311643993655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,5 +938,10 @@ PrefabInstance:
 --- !u!4 &6584160570472812970 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 162393480771367374, guid: dd994a0b187e6b3468152491a134437f, type: 3}
+  m_PrefabInstance: {fileID: 6421943012772618340}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6584160570472812983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162393480771367379, guid: dd994a0b187e6b3468152491a134437f, type: 3}
   m_PrefabInstance: {fileID: 6421943012772618340}
   m_PrefabAsset: {fileID: 0}
