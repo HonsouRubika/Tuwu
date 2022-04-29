@@ -43,11 +43,13 @@ public class PlayerLifeSystem : MonoBehaviour
         {
             players[0] = GameManager.Instance.playerControllers[0].gameObject;
             playerAAnimator = players[0].GetComponent<Animator>();
+            reviveFX = GameManager.Instance.playerControllers[0].goodReanimationFeedback.gameObject.GetComponent<ParticleSystem>();
         }
         else
         {
             players[1] = GameManager.Instance.playerControllers[1].gameObject;
             playerBAnimator = players[1].GetComponent<Animator>();
+            reviveFX = GameManager.Instance.playerControllers[1].goodReanimationFeedback.gameObject.GetComponent<ParticleSystem>();
         }
     }
 
@@ -148,6 +150,7 @@ public class PlayerLifeSystem : MonoBehaviour
             if (playerAAnimator != null) playerAAnimator.SetBool("isDead", true);
             new WaitForSeconds(0.5f);
             reviveFX.Play();
+            GameManager.Instance.playerControllers[0].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[0].gameObject.transform.position.z);
             playerALife = playerAMaxLife;
         }
         else if (playerBLife <= 0)
@@ -155,7 +158,9 @@ public class PlayerLifeSystem : MonoBehaviour
             if (playerBAnimator != null) playerBAnimator.SetBool("isDead", true);
             new WaitForSeconds(0.5f);
             reviveFX.Play();
+            GameManager.Instance.playerControllers[1].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[1].gameObject.transform.position.z);
             playerBLife = playerBMaxLife;
+
         }
         else
         {
@@ -165,3 +170,4 @@ public class PlayerLifeSystem : MonoBehaviour
         yield return null;
     }
 }
+

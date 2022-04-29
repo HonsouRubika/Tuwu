@@ -80,26 +80,7 @@ public class PlayerController : MonoBehaviour
         shootCooldownStart = -shootCooldown;
         fireworkStackActu = fireworkMaxStack;
 
-        //find scene corners
-        GameObject[] limits = GameObject.FindGameObjectsWithTag("Corner");
-        foreach(GameObject corner in limits)
-        {
-            switch (corner.name)
-            {
-                case "Left":
-                    leftBorder = corner.transform;
-                    break;
-                case "Right":
-                    rightBorder = corner.transform;
-                    break;
-                case "Up":
-                    upperBorder = corner.transform;
-                    break;
-                case "Down":
-                    bottomBorder = corner.transform;
-                    break;
-            }
-        }
+        LinkCorners();
 
         if (GameManager.Instance.playersJoinedCount == 1)
         {
@@ -208,6 +189,30 @@ public class PlayerController : MonoBehaviour
         ReloadFireworkStack();
     }
 
+    public void LinkCorners()
+    {
+        //find scene corners
+        GameObject[] limits = GameObject.FindGameObjectsWithTag("Corner");
+        foreach (GameObject corner in limits)
+        {
+            switch (corner.name)
+            {
+                case "Left":
+                    leftBorder = corner.transform;
+                    break;
+                case "Right":
+                    rightBorder = corner.transform;
+                    break;
+                case "Up":
+                    upperBorder = corner.transform;
+                    break;
+                case "Down":
+                    bottomBorder = corner.transform;
+                    break;
+            }
+        }
+    }
+
     public void Move()
     {
         //apply from input value
@@ -259,6 +264,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             transform.position = new Vector3(transform.position.x, bottomBorder.position.y, transform.position.z);
         }
+       
 
     }
 

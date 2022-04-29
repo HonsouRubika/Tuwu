@@ -29,9 +29,9 @@ public class LevelHandler : Singleton<LevelHandler>
     [SerializeField] private List<GameObject> enemyInRoom5 = new List<GameObject>();
 
     [SerializeField] private GameObject spawnPointP1;
-    [SerializeField] private List<GameObject> listspawnPointsP1 = new List<GameObject>();
+    public List<GameObject> listspawnPointsP1 = new List<GameObject>();
     [SerializeField] private GameObject SspawnPointP2;
-    [SerializeField] private List<GameObject> listspawnPointsP2 = new List<GameObject>();
+    public List<GameObject> listspawnPointsP2 = new List<GameObject>();
 
 
     [SerializeField] private GameObject arrowParent;
@@ -276,7 +276,7 @@ public class LevelHandler : Singleton<LevelHandler>
     {
         if (currentList.Count ==0)
         {
-          
+            collisionCollider.SetActive(true);
 
             blockers[currentState].SetActive(false);
             
@@ -371,7 +371,7 @@ public class LevelHandler : Singleton<LevelHandler>
         Debug.Log("ChangeRoom");
         
         yield return new WaitForSeconds(0.5f);
-        currentState++;
+        
 
         //A la fin de la transition :
         arrows[currentState - 1].SetActive(false);
@@ -379,10 +379,11 @@ public class LevelHandler : Singleton<LevelHandler>
 
         //Teléporter les personnages
 
-        GameManager.Instance.playerControllers[0].gameObject.transform.position = listspawnPointsP1[currentState].transform.position;
-        GameManager.Instance.playerControllers[1].gameObject.transform.position = listspawnPointsP2[currentState].transform.position;
+        GameManager.Instance.playerControllers[0].gameObject.transform.position = new Vector3( listspawnPointsP1[currentState].transform.position.x,listspawnPointsP1[currentState].transform.position.y, GameManager.Instance.playerControllers[0].gameObject.transform.position.z);
+        GameManager.Instance.playerControllers[1].gameObject.transform.position = new Vector3(listspawnPointsP2[currentState].transform.position.x, listspawnPointsP2[currentState].transform.position.y, GameManager.Instance.playerControllers[1].gameObject.transform.position.z);
         foreach (var item in GameManager.Instance.playerControllers)
         {
+            item.LinkCorners();
             Instantiate(item.gameObject.GetComponent<PlayerController>().goodReanimationFeedback, item.gameObject.transform);
             item.gameObject.SetActive(true);
             //Instancier les fummées.
@@ -402,29 +403,30 @@ public class LevelHandler : Singleton<LevelHandler>
 
     void CameraSwitch()
     {
+        currentState++;
         Debug.Log(currentState);
-
+        
         switch (currentState)
         {
             case 1:
                 animator.SetInteger("CurrentState", currentState);
-                blockers[currentState - 1].SetActive(true);
+                blockers[currentState].SetActive(true);
                 break;
             case 2:
                 animator.SetInteger("CurrentState", currentState);
-                blockers[currentState - 1].SetActive(true);
+                blockers[currentState].SetActive(true);
                 break;
             case 3:
                 animator.SetInteger("CurrentState", currentState);
-                blockers[currentState - 1].SetActive(true);
+                blockers[currentState].SetActive(true);
                 break;
             case 4:
                 animator.SetInteger("CurrentState", currentState);
-                blockers[currentState - 1].SetActive(true);
+                blockers[currentState].SetActive(true);
                 break;
             case 5:
                 animator.SetInteger("CurrentState", currentState);
-                blockers[currentState - 1].SetActive(true);
+                blockers[currentState].SetActive(true);
                 break;
             default:
                 break;
