@@ -42,12 +42,13 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletDeath();
 
-		for (int i = 2; i < bullet.moduleVFX.availableVFX.Count; i++)
+		if(!didCollide)
 		{
-			bullet.moduleVFX.PlayVFX(i);
+			for (int i = 2; i < bullet.moduleVFX.availableVFX.Count; i++)
+			{
+				bullet.moduleVFX.PlayVFX(i);
+			}
 		}
-
-		// Your code here
 	}
 
 	// This gets called after the bullet has died, it can be delayed.

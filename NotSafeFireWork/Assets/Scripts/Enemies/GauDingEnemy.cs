@@ -57,6 +57,7 @@ public class GauDingEnemy : Enemy
 	private void Start()
 	{
 		Init();
+		attackState = (GauDingAttackState)Random.Range(0, 4);
 		attackTimer = new Clock();
 		attackTimer.ClockEnded += OnAttackCooldownEnded;
 	}

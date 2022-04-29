@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Remerciments :'
+  m_text: 'Remerciements :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f2afd91770302204ab16c33a5cd63387, type: 2}
   m_sharedMaterial: {fileID: -5497230556042841998, guid: f2afd91770302204ab16c33a5cd63387, type: 2}

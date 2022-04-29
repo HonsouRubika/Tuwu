@@ -114,7 +114,9 @@ public class PlayerAttack : MonoBehaviour
             _power = 1000;
 
         if (_emitter.bullets.Count > 0)
+		{
             _emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
-        _emitter.bullets[0].moduleMovement.baseScale *= 1.5f;
+            _emitter.bullets[0].moduleMovement.baseScale *= 1.5f;
+        }
     }
 }
