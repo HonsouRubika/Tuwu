@@ -33,6 +33,10 @@ public class GameManager : Singleton<GameManager>
 		if(playersJoinedCount == 2)
 		{
 			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
+
+			playerControllers[0].transform.position = LevelHandler.Instance.listspawnPointsP1[0].transform.position;
+			playerControllers[1].transform.position = LevelHandler.Instance.listspawnPointsP2[0].transform.position;
+
 			EnableFirstRoomEnemies();
 		}
 

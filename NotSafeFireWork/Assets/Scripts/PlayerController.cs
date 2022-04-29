@@ -306,8 +306,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
-        //deal dmg to player on lifeSystem with bullet.moduleParameters.GetFloat("_PowerLevel")
-        soundManager.PlaySFX("charaHurt", soundManager.fxSource);
+        float _damages = bullet.moduleParameters.GetFloat("_PowerLevel") * .5f;
+        if(isPlayerA)
+		{
+            GameManager.Instance.pls.PlayerATakeDamage(_damages);
+		}
+        else
+		{
+            GameManager.Instance.pls.PlayerBTakeDamage(_damages);
+        }
     }
 
     private IEnumerator Shooting()

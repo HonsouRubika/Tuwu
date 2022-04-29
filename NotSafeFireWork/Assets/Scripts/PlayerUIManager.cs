@@ -22,16 +22,16 @@ public class PlayerUIManager : MonoBehaviour
         lifeSystem = GameManager.Instance.GetComponent<PlayerLifeSystem>();
     }
 
-    private void FixedUpdate()
-    {
-        GetHealth();
-        GetAmmo();
+	private void FixedUpdate()
+	{
+		GetHealth();
+		GetAmmo();
 
-        DrawHealth();
-        DrawAmmo();
-    }
+		DrawHealth();
+		DrawAmmo();
+	}
 
-    private void GetHealth()
+	private void GetHealth()
     {
         if(playerNumber == 1)
         {

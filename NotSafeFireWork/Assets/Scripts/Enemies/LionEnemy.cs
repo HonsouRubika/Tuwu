@@ -47,6 +47,14 @@ public class LionEnemy : Enemy
 
 	private void Update()
 	{
+		if (GameManager.Instance.playerControllers == null)
+			return;
+		if (GameManager.Instance.playerControllers.Count != 2)
+			return;
+
+		if(target == null)
+			target = GameManager.Instance.playerControllers[Random.Range(0, 2)].transform;
+
 		if (Stunned || HitStunned)
 		{
             if (Stunned)
@@ -139,7 +147,6 @@ public class LionEnemy : Enemy
 
 	public void OnHitByBullet(Bullet _bullet, Vector3 _position)
 	{
-		Debug.Log("Lion took damages: " + (int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
 		DealDamage((int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
 		if(_bullet != null)
 			_bullet.Die();

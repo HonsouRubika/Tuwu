@@ -39,8 +39,6 @@ public abstract class Enemy : MonoBehaviour
 
 	protected void Hit(int _damages)
 	{
-		Debug.Log(_damages);
-
 		if(currentHealthPoints - _damages <= 0)
 		{
 			Death();

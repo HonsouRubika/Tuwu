@@ -54,17 +54,18 @@ public class GauDingEnemy : Enemy
 
 	private void Update()
 	{
-		if(!isInit)
+		if (!isInit)
 		{
-			if(GameManager.Instance.playerControllers != null)
+			if (GameManager.Instance.playerControllers != null)
 			{
-				if(GameManager.Instance.playerControllers.Count == 2)
+				if (GameManager.Instance.playerControllers.Count == 2)
 				{
 					player1 = GameManager.Instance.playerControllers[0].transform;
 					player2 = GameManager.Instance.playerControllers[1].transform;
 					isInit = true;
 				}
 			}
+			return;
 		}
 
 		if (Stunned || HitStunned)

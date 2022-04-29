@@ -289,10 +289,6 @@ public class LevelHandler : Singleton<LevelHandler>
             //Trigger le clignotement de la flèche.
             lerpCoroutine = StartCoroutine(LerpValue());
         }
-        else
-        {
-            Debug.Log("Still Enemy");
-        }
     }
 
     //Clignotements de la flèche.

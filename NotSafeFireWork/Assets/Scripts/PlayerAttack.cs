@@ -74,6 +74,9 @@ public class PlayerAttack : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
 		yield return new WaitForEndOfFrame();
+		if (_power > 1000)
+			_power = 1000;
+
 		_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
 	}
 }
