@@ -36,6 +36,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AmbientOcclusionTexture:
         m_Texture: {fileID: 2800000, guid: 59d09f7567e693f45a81c6c67bd95a24, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -112,6 +116,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 2db65e39f838aac44a6f90814753a596, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_be6f2101f32a4967981678d067ae5c7c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 59d09f7567e693f45a81c6c67bd95a24, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_d9f380f35c64489baead3864b00a40cd_Texture_1:
         m_Texture: {fileID: 2800000, guid: 9112312ac0e761143ad673770470fdff, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -173,6 +181,7 @@ Material:
     - _Value: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _alphaYesNo: 0
     - _emissiveIntensity: 1
     - _glossinessFactor: 0.5
     m_Colors:
