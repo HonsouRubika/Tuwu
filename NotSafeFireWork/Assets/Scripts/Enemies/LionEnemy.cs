@@ -10,6 +10,7 @@ public class LionEnemy : Enemy
 	[SerializeField] float attackCooldown = 1f;
 	Clock attackCooldownTimer;
 	public Animator animator;
+	[SerializeField] SpriteRenderer sr;
 	[Space]
 	[SerializeField] Transform leftBorder;
 	[SerializeField] Transform rightBorder;
@@ -115,6 +116,18 @@ public class LionEnemy : Enemy
 	void FleeTargetPlayer()
 	{
 		transform.Translate((transform.position - target.position).normalized * Time.deltaTime * moveSpeed);
+	}
+
+	void UpdateSpriteFlipX()
+	{
+		if((transform.position - target.position).x > 0f)
+		{
+			sr.flipX = false;
+		}
+		else if ((transform.position - target.position).x < 0f)
+		{
+			sr.flipX = true;
+		}
 	}
 
 	void OnAttackCooldownEnded()
