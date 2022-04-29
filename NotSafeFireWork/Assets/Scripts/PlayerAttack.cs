@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
 	[SerializeField] BulletReceiver bulletReceiver;
 	[SerializeField] CircleCollider2D stunCollider;
 	[SerializeField] GameObject gunObject;
+	[SerializeField] GameObject vfxSlash;
 
 	//sounds
 	SoundManager soundManager;
@@ -41,6 +42,7 @@ public class PlayerAttack : MonoBehaviour
 		bulletReceiver.enabled = true;
 		stunCollider.enabled = true;
 		soundManager.PlaySFX("swingBat", soundManager.fxSource);
+		vfxSlash.SetActive(true);
 		canAttack = false;
 		attackLifeTimer.SetTime(attackLifeTime);
 		attackCooldownTimer.SetTime(attackCooldown);
@@ -53,6 +55,7 @@ public class PlayerAttack : MonoBehaviour
 
 	void OnAttackLifeEnded()
 	{
+		vfxSlash.SetActive(false);
 		bulletReceiver.enabled = false;
 		stunCollider.enabled = false;
 	}

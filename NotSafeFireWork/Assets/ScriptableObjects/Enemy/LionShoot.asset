@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 8134656
+  uniqueIndex: 186714
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1224666
+  uniqueIndex: 10388959
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -17670,7 +17670,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15723356
+  uniqueIndex: 2942935
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -73791,7 +73791,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9613149
+  uniqueIndex: 10862423
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -98566,7 +98566,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11176042
+  uniqueIndex: 12940821
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
