@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer sprP2;
     public Animator playerAAnimator;
     public Animator playerBAnimator;
-    [HideInInspector] public Animator animator;
+    public Animator animator;
     public GameObject goodReanimationFeedback;
     public GameObject reanimationFeedbackA;
     public GameObject reanimationFeedbackB;
