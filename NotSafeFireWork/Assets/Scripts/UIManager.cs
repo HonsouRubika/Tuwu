@@ -43,6 +43,8 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         gameManager = GameManager.Instance;
+        hudCanvas.SetActive(true);
+        endCanvas.SetActive(false);
     }
 
     private void FixedUpdate()
