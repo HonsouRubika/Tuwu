@@ -123,14 +123,17 @@ public class UIManager : Singleton<UIManager>
         {
             victoryImage.SetActive(true);
             defeatImage.SetActive(false);
+
+            returnButton.SetActive(false);
         }
         else
         {
             victoryImage.SetActive(false);
             defeatImage.SetActive(true);
-        }
 
-        EventSystem.current.SetSelectedGameObject(returnButton);
+            returnButton.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(returnButton);
+        }
     }
 
     public void ActionBackToMainMenu()
