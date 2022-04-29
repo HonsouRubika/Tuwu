@@ -20,7 +20,8 @@ public class SoundExplosion : BaseBulletBehaviour {
 
 	// Use this for initialization (instead of Start)
 
-	private bool didCollide = false;
+	bool didCollide = false;
+
 	public override void OnBulletBirth ()
 	{
 		base.OnBulletBirth();
@@ -41,6 +42,10 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletDeath();
 
+		for (int i = 2; i < bullet.moduleVFX.availableVFX.Count; i++)
+		{
+			bullet.moduleVFX.PlayVFX(i);
+		}
 
 		// Your code here
 	}
@@ -51,10 +56,6 @@ public class SoundExplosion : BaseBulletBehaviour {
 		base.OnBehaviourDeath();
 
 		// Your code here
-		if (!didCollide)
-		{
-			bullet.modulePatterns.Play();
-		}
 	}
 
 	// This gets called whenever the bullet collides with a BulletReceiver. The most common callback.
@@ -62,12 +63,20 @@ public class SoundExplosion : BaseBulletBehaviour {
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
+		didCollide = true;
+
 		if (br.tag != "PlayerAttack")
         {
-            float power = bullet.moduleParameters.GetFloat("_PowerLevel");
+			
+			for (int i = 2; i< bullet.moduleVFX.availableVFX.Count; i++)
+            {
+				bullet.moduleVFX.PlayVFX(i);
+			}
+
+
+			float power = bullet.moduleParameters.GetFloat("_PowerLevel");
             if (power >= 1000)
             {
-				
                 SoundManager.Instance.PlaySFX("fwExplosionStrong", SoundManager.Instance.fwSource);
             }
             else if (power >= 700)
@@ -92,10 +101,6 @@ public class SoundExplosion : BaseBulletBehaviour {
 		base.OnBulletCollisionEnter(br, collisionPoint);
 
 		// Your code here
-
-		if (br.tag == "Player" || br.tag == "PlayerAttack" || br.tag == "Enemy"){
-			didCollide = true;
-        }
 	}
 
 	// This gets called whenever the bullet stops colliding with any BulletReceiver.

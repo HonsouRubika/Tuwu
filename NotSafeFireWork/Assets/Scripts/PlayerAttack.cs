@@ -59,12 +59,17 @@ public class PlayerAttack : MonoBehaviour
 
 	public void OnHitByBullet(Bullet bullet, Vector3 position)
 	{
+
+		
+
 		EmitterProfile _profile = bullet.emitter.emitterProfile;
 		float power = bullet.moduleParameters.GetFloat("_PowerLevel");
 		bullet.Die();
 		power += Vector3.Distance(position, transform.position) * 50;
 		BulletEmitter _emitter = gunObject.AddComponent<BulletEmitter>();
+
 		_emitter.emitterProfile = _profile;
+
 		_emitter.Play();
 		StartCoroutine(SetBulletPower(_emitter, power));
 	}
@@ -78,5 +83,6 @@ public class PlayerAttack : MonoBehaviour
 			_power = 1000;
 
 		_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
+		//_emitter.bullets[0].moduleMovement.baseScale += 1 ;
 	}
 }

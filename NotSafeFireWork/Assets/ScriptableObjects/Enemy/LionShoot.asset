@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 8134656
+  uniqueIndex: 13372428
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4618,7 +4618,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 0
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 6268382309436826723}
+  currentParamsSelected: {fileID: 114027673760526898}
   numberOfSubAssets: 9
 --- !u!114 &114027673760526898
 MonoBehaviour:
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 1224666
+  uniqueIndex: 15516282
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -6909,7 +6909,7 @@ MonoBehaviour:
       unless: 0
       canceller: 0
     onBulletDeath:
-      enabled: 1
+      enabled: 0
       behaviour: 0
       unless: 0
       canceller: 0
@@ -7712,8 +7712,8 @@ MonoBehaviour:
     requiredComponentName: 
   foldoutVFX: 1
   hideSpriteList: 0
-  vfxOpened: 1
-  currentlyDisplayedModule: 7
+  vfxOpened: 2
+  currentlyDisplayedModule: 1
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -13122,7 +13122,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 10373351
+  uniqueIndex: 2203568
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -17670,7 +17670,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15723356
+  uniqueIndex: 3745524
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -24782,7 +24782,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 8814982
+  uniqueIndex: 11020816
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -49017,7 +49017,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 5196748
+  uniqueIndex: 9363599
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -73791,7 +73791,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9613149
+  uniqueIndex: 9559505
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -98566,7 +98566,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11176042
+  uniqueIndex: 7674466
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -100081,7 +100081,7 @@ MonoBehaviour:
       unless: 0
       canceller: 0
     onBulletDeath:
-      enabled: 1
+      enabled: 0
       behaviour: 0
       unless: 0
       canceller: 0
@@ -100885,7 +100885,7 @@ MonoBehaviour:
   foldoutVFX: 0
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 2
+  currentlyDisplayedModule: 1
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -105722,7 +105722,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 414560
+  uniqueIndex: 10781887
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
