@@ -138,5 +138,7 @@ public class LionEnemy : Enemy
 	public void OnHitByBullet(Bullet _bullet, Vector3 _position)
 	{
 		DealDamage((int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
+		if(_bullet != null)
+			_bullet.Die();
 	}
 }
