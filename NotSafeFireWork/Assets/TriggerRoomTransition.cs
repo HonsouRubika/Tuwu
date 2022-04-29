@@ -10,6 +10,19 @@ public class TriggerRoomTransition : MonoBehaviour
         {
             Debug.Log("Playercollision");
             LevelHandler.Instance.ChangeRoomTrigger();
+
+            if (LevelHandler.currentState == 5)
+            {
+                UIManager.Instance.EnableEndScreen(true);
+                StartCoroutine(QuitGame());
+            }
         }
+    }
+
+    IEnumerator QuitGame()
+    {
+        yield return new WaitForSeconds(5f);
+        Debug.Log("byebye");
+        Application.Quit();
     }
 }

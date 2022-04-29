@@ -88,7 +88,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 }
                 enemyInRoom0.Clear();
                 currentList = enemyInRoom0;
-                RoomClearFeedback();
+               
                 break;
 
             case 1:
@@ -99,7 +99,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 
                 enemyInRoom1.Clear();
                 currentList = enemyInRoom1;
-                RoomClearFeedback();
+               
                 break;
 
             case 2:
@@ -110,7 +110,7 @@ public class LevelHandler : Singleton<LevelHandler>
               
                 enemyInRoom2.Clear();
                 currentList = enemyInRoom2;
-                RoomClearFeedback();
+                
                 break;
 
             case 3:
@@ -121,7 +121,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 
                 enemyInRoom3.Clear();
                 currentList = enemyInRoom3;
-                RoomClearFeedback();
+                
                 break;
 
             case 4:
@@ -132,7 +132,7 @@ public class LevelHandler : Singleton<LevelHandler>
                
                 enemyInRoom4.Clear();
                 currentList = enemyInRoom4;
-                RoomClearFeedback();
+               
                 break;
 
             case 5:
@@ -143,7 +143,7 @@ public class LevelHandler : Singleton<LevelHandler>
                
                 enemyInRoom0.Clear();
                 currentList = enemyInRoom5;
-                RoomClearFeedback();
+                
                 break;
             default:
                 break;
@@ -207,6 +207,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
 
             case 1:
+                currentList = enemyInRoom1;
                 for (int i = 0; i <= currentList.Count - 1; i++)
                 {
                     enemyInRoom1[i].gameObject.SetActive(true);
@@ -214,6 +215,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
 
             case 2:
+                currentList = enemyInRoom2;
                 for (int i = 0; i <= currentList.Count - 1; i++)
                 {
                     enemyInRoom2[i].gameObject.SetActive(true);
@@ -221,6 +223,7 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
 
             case 3:
+                currentList = enemyInRoom3;
                 for (int i = 0; i <= currentList.Count - 1; i++)
                 {
                     enemyInRoom3[i].gameObject.SetActive(true);
@@ -228,12 +231,14 @@ public class LevelHandler : Singleton<LevelHandler>
                 break;
 
             case 4:
+                currentList = enemyInRoom4;
                 for (int i = 0; i <= currentList.Count - 1; i++)
                 {
                     enemyInRoom4[i].gameObject.SetActive(true);
                 }
                 break;
             case 5:
+                currentList = enemyInRoom5;
                 for (int i = 0; i <= currentList.Count - 1; i++)
                 {
                     enemyInRoom5[i].gameObject.SetActive(true);
@@ -273,18 +278,19 @@ public class LevelHandler : Singleton<LevelHandler>
     }
 
     //A appeler dès qu'un enemy meurt.
-    public void RoomClearFeedback()
+    public void RoomClearFeedback(GameObject monsterkilled)
     {
+        currentList.Remove(monsterkilled);
+
         if (currentList.Count ==0)
         {
-            collisionCollider.SetActive(true);
+            collisionCollider.GetComponent<BoxCollider>().enabled = true; 
 
             blockers[currentState].SetActive(false);
             
             arrows[currentState].SetActive(true);
 
-            //Bruit de Gong;
-            soundManager.PlaySFX("gongStartLevel", soundManager.fxSource);
+            
 
             //Trigger le clignotement de la flèche.
             lerpCoroutine = StartCoroutine(LerpValue());
@@ -334,7 +340,7 @@ public class LevelHandler : Singleton<LevelHandler>
     //A appeler lorsque les joueurs veulent changer de salle.
     public void ChangeRoomTrigger()
     {
-        collisionCollider.SetActive(false);
+        collisionCollider.GetComponent<BoxCollider>().enabled = false;
 
         //désactiver le clignotement de la flèche.
         if (lerpCoroutine != null)
@@ -385,8 +391,9 @@ public class LevelHandler : Singleton<LevelHandler>
             item.gameObject.SetActive(true);
             //Instancier les fummées.
         }
-       
 
+        //Bruit de Gong;
+        soundManager.PlaySFX("gongStartLevel", soundManager.fxSource);
 
         //Faire apparaitre le message FIGHT.
 
@@ -395,6 +402,7 @@ public class LevelHandler : Singleton<LevelHandler>
         {
             item.playerStateActu = (int)PlayerController.PlayerState.active;
         }
+        InitRoom();
         yield return null;
     } 
 
@@ -408,22 +416,27 @@ public class LevelHandler : Singleton<LevelHandler>
             case 1:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState-1].SetActive(true);
                 break;
             case 2:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState-1].SetActive(true);
                 break;
             case 3:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 4:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 5:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             default:
                 break;

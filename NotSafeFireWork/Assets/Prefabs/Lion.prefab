@@ -371,8 +371,8 @@ MonoBehaviour:
   deathFX: {fileID: 4359796454226338659, guid: 6a6b5be28ff54fa42aaf06f613e7754f, type: 3}
   soundManager: {fileID: 0}
   moveSpeed: 7.5
-  minDistance: 8
-  maxDistance: 18
+  minDistance: 12
+  maxDistance: 20
   attackCooldown: 3
   animator: {fileID: 5158754535097194699}
   sr: {fileID: 136445977798561751}

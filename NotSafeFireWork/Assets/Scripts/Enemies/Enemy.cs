@@ -53,7 +53,7 @@ public abstract class Enemy : MonoBehaviour
 
 	void Death()
 	{
-		LevelHandler.Instance.RoomClearFeedback();
+		LevelHandler.Instance.RoomClearFeedback(gameObject);
 		AddScore();
 		Instantiate(deathFX, transform.position, Quaternion.identity);
 		Destroy(gameObject);
