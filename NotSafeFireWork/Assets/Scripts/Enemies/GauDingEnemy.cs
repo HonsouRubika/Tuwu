@@ -31,6 +31,7 @@ public class GauDingEnemy : Enemy
 	public GauDingAttackState attackState = GauDingAttackState.Crackling;
 	HorizontalMoveDir moveDir = HorizontalMoveDir.Left;
 
+
 	bool canAttack = true;
 	Clock attackTimer;
 
@@ -44,6 +45,10 @@ public class GauDingEnemy : Enemy
 		if(CurrentHealthPoints < maxHealthPoints * .5f)
 		{
 			NextState();
+		}
+		if (CurrentHealthPoints <= 0)
+		{
+			animator.SetBool("isDeath", true);
 		}
 	}
 
@@ -71,10 +76,25 @@ public class GauDingEnemy : Enemy
 		}
 
 		if (Stunned || HitStunned)
-			return;
+        {
+			//degats
+            if (Stunned)
+            {
+				animator.SetTrigger("Hurt");
+            }
+
+        }
 
 		if (Move())
+        {
+			animator.SetBool("isMove", true);
 			Attack();
+		}
+        else
+        {
+			animator.SetBool("isMove", true);
+		}
+
 	}
 
 	bool Move()
@@ -143,7 +163,7 @@ public class GauDingEnemy : Enemy
 			return;
 
 		canAttack = false;
-
+		animator.SetTrigger("Attack");
 		switch (attackState)
 		{
 			case GauDingAttackState.Lion:
@@ -175,18 +195,27 @@ public class GauDingEnemy : Enemy
 
 	void NextState()
 	{
+
 		switch (attackState)
 		{
 			case GauDingAttackState.Lion:
+				animator.SetInteger("Current", 0);
+				animator.SetTrigger("Swap");
 				attackState = GauDingAttackState.Crackling;
 				break;
 			case GauDingAttackState.Crackling:
+				animator.SetInteger("Current", 1);
+				animator.SetTrigger("Swap");
 				attackState = GauDingAttackState.Shotgun;
 				break;
 			case GauDingAttackState.Shotgun:
+				animator.SetInteger("Current", 2);
+				animator.SetTrigger("Swap");
 				attackState = GauDingAttackState.Splitter;
 				break;
 			case GauDingAttackState.Splitter:
+				animator.SetInteger("Current", 3);
+				animator.SetTrigger("Swap");
 				attackState = GauDingAttackState.Lion;
 				break;
 			default:
