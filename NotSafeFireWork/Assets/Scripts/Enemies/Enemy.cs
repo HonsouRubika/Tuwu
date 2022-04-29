@@ -51,7 +51,7 @@ public abstract class Enemy : MonoBehaviour
 
 	void Death()
 	{
-		LevelHandler.Instance.RoomClearFeedback();
+		LevelHandler.Instance.RoomClearFeedback(gameObject);
 		AddScore();
 		Destroy(gameObject);
 	}
