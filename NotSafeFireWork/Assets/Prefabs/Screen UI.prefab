@@ -1202,7 +1202,7 @@ MonoBehaviour:
   scoreDrawn: 0
   reviveDrawn: 3
   isHudActive: 1
-  hudCanvas: {fileID: 0}
+  hudCanvas: {fileID: 1215260030012274284}
   scoreText: {fileID: 1215260029552322560}
   reviveIcons:
   - {fileID: 1215260029337283281}
