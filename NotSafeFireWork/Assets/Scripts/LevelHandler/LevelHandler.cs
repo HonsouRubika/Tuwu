@@ -284,7 +284,7 @@ public class LevelHandler : Singleton<LevelHandler>
 
         if (currentList.Count ==0)
         {
-            collisionCollider.SetActive(true);
+            collisionCollider.GetComponent<BoxCollider>().enabled = true; 
 
             blockers[currentState].SetActive(false);
             
@@ -341,7 +341,7 @@ public class LevelHandler : Singleton<LevelHandler>
     //A appeler lorsque les joueurs veulent changer de salle.
     public void ChangeRoomTrigger()
     {
-        collisionCollider.SetActive(false);
+        collisionCollider.GetComponent<BoxCollider>().enabled = false;
 
         //désactiver le clignotement de la flèche.
         if (lerpCoroutine != null)
@@ -416,22 +416,27 @@ public class LevelHandler : Singleton<LevelHandler>
             case 1:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState-1].SetActive(true);
                 break;
             case 2:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState-1].SetActive(true);
                 break;
             case 3:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 4:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             case 5:
                 animator.SetInteger("CurrentState", currentState);
                 blockers[currentState].SetActive(true);
+                blockers[currentState - 1].SetActive(true);
                 break;
             default:
                 break;

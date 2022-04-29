@@ -370,8 +370,8 @@ MonoBehaviour:
   enemyScore: 10
   soundManager: {fileID: 0}
   moveSpeed: 7.5
-  minDistance: 8
-  maxDistance: 18
+  minDistance: 12
+  maxDistance: 20
   attackCooldown: 3
   animator: {fileID: 5158754535097194699}
   sr: {fileID: 136445977798561751}
