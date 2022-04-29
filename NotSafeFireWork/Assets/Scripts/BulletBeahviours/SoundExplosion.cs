@@ -61,7 +61,7 @@ public class SoundExplosion : BaseBulletBehaviour {
             float power = bullet.moduleParameters.GetFloat("_PowerLevel");
             if (power >= 1000)
             {
-				Debug.Log("boumfort");
+				
                 SoundManager.Instance.PlaySFX("fwExplosionStrong", SoundManager.Instance.fwSource);
             }
             else if (power >= 700)
