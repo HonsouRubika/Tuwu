@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 1108861
+  uniqueIndex: 4514668
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15708066
+  uniqueIndex: 6296974
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -5562,8 +5562,8 @@ MonoBehaviour:
     requiredComponentName: 
   foldoutVFX: 1
   hideSpriteList: 0
-  vfxOpened: 1
-  currentlyDisplayedModule: 2
+  vfxOpened: 2
+  currentlyDisplayedModule: 1
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -10972,7 +10972,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2094907
+  uniqueIndex: 11734950
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -15520,7 +15520,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5228645
+  uniqueIndex: 12241982
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -22632,7 +22632,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 13937844
+  uniqueIndex: 6518156
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -46867,7 +46867,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2949198
+  uniqueIndex: 16554185
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -71641,7 +71641,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 12742769
+  uniqueIndex: 9635751
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -96416,7 +96416,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 11337547
+  uniqueIndex: 2840121
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -96533,7 +96533,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: {fileID: 21300000, guid: eb797ba9bbdba9b47b82d447bd3903e9, type: 3}
+      defaultValue: {fileID: 21300000, guid: c4c76c2d0cc58724199bf3d679f11185, type: 3}
     narrowType: 1
     requireComponent: 0
     typeName: UnityEngine.Sprite, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -96874,7 +96874,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: {fileID: 2100000, guid: f834cba8a7908814692c7a4f9afc4b45, type: 2}
+      defaultValue: {fileID: 2100000, guid: 326def19b5bca2348811aee3feb5c00a, type: 2}
     narrowType: 1
     requireComponent: 0
     typeName: UnityEngine.Material, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -97472,7 +97472,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: {r: 1, g: 1, b: 1, a: 1}
+      defaultValue: {r: 0.8141064, g: 0.5330188, b: 1, a: 1}
       gradientValue:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -98735,7 +98735,7 @@ MonoBehaviour:
   foldoutVFX: 0
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 5
+  currentlyDisplayedModule: 1
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -99076,7 +99076,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 5
+      defaultValue: 1
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -103572,7 +103572,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 14798229
+  uniqueIndex: 16309473
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
