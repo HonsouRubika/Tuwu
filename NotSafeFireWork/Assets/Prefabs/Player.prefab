@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5852412979349217739
 Transform:
   m_ObjectHideFlags: 0
@@ -162,14 +162,14 @@ MonoBehaviour:
   pivot: {fileID: 7200368004916221998}
   gun: {fileID: 4660966136966137133}
   isPlayerA: 0
-  movementSpeed: 500
+  movementSpeed: 650
   gunDirection: {x: 0, y: 0}
   dashCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: -0
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -177,17 +177,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.1
-      value: 0.9
-      inSlope: 1.3333336
-      outSlope: 1.3333336
-      tangentMode: 136
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.3
-      value: 1
+      time: 0.03789854
+      value: 0.939664
       inSlope: 0.0039009252
       outSlope: 0.0039009252
       tangentMode: 0
@@ -195,17 +186,26 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 0.9
-      inSlope: -1.4510896
-      outSlope: -1.4510896
+      time: 0.6
+      value: 0.94381714
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.28400007
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9972249
+      value: 0.94186556
+      inSlope: 0.011130734
+      outSlope: 0.011130734
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2469263
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.6
-      value: 0
+      time: 1
+      value: 0.005723357
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -215,9 +215,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  dashSpeed: 1250
-  dashDuration: 0.6
-  dashCooldown: 3
+  dashSpeed: 2000
+  dashDuration: 0.2
+  dashCooldown: 0.5
   shootCooldown: 0.4
   fireworkMaxStack: 3
   fireworkStackActu: 0
@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1090157494761712733
 Transform:
   m_ObjectHideFlags: 0
