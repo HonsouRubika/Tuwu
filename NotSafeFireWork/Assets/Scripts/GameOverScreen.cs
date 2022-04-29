@@ -9,12 +9,27 @@ public class GameOverScreen : MonoBehaviour
 {
     public GameObject returnButton;
     public TextMeshProUGUI scoreText;
-    private int playerScore = 0;
+    public int playerScore = 0;
+    private int playerScoreDrawn = 0;
 
     private void Start()
     {
         EventSystem.current.SetSelectedGameObject(returnButton);
-        scoreText.text = "" + playerScore;
+    }
+
+    private void FixedUpdate()
+    {
+        if(playerScoreDrawn < playerScore)
+        {
+            playerScoreDrawn += 4;
+            
+            if (playerScoreDrawn > playerScore)
+            {
+                playerScoreDrawn = playerScore;
+            }
+
+            scoreText.text = "" + playerScoreDrawn;
+        }
     }
 
     private void OnEnable()
