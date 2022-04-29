@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4792367707423481816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389979606149389661}
+  m_Layer: 0
+  m_Name: Attack Origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &389979606149389661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792367707423481816}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0.000000104308114}
+  m_LocalPosition: {x: -0, y: -3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6996950852360389770}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!1 &6996950852083340627
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,9 +76,11 @@ GameObject:
   - component: {fileID: 6996950852360389815}
   - component: {fileID: 6996950852360389768}
   - component: {fileID: 6996950852360389769}
+  - component: {fileID: 1857533556582625250}
+  - component: {fileID: 5559356599338652806}
   m_Layer: 0
   m_Name: GauDing
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,6 +97,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 389979606149389661}
   - {fileID: 6996950852593921241}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,6 +117,7 @@ MonoBehaviour:
   maxHealthPoints: 400
   stunDuration: 0.1
   hitStunDuration: 0.2
+  soundManager: {fileID: 0}
   moveSpeed: 7.5
   minDistanceWithPlayers: 5
   maxDistanceWithPlayers: 8
@@ -110,8 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 0}
-  patternOrigin: {fileID: 0}
+  emitterProfile: {fileID: 11400000, guid: 8d53a482e7027c544b609a6241d9d508, type: 2}
+  patternOrigin: {fileID: 389979606149389661}
   playAtStart: 0
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
@@ -128,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 0}
-  patternOrigin: {fileID: 0}
+  emitterProfile: {fileID: 11400000, guid: 44c67229f9b85d945a2d612b5d4675dc, type: 2}
+  patternOrigin: {fileID: 389979606149389661}
   playAtStart: 0
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
@@ -146,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 0}
-  patternOrigin: {fileID: 0}
+  emitterProfile: {fileID: 11400000, guid: cc79f20dfd894864c8d44d671debcac5, type: 2}
+  patternOrigin: {fileID: 389979606149389661}
   playAtStart: 0
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
@@ -164,12 +199,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a676b285f069c3c4884c27e78d0fc696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emitterProfile: {fileID: 0}
-  patternOrigin: {fileID: 0}
+  emitterProfile: {fileID: 11400000, guid: c0c9f076017cec541afafbda8a08683a, type: 2}
+  patternOrigin: {fileID: 389979606149389661}
   playAtStart: 0
   useDefaultGizmoColor: 1
   gizmoColor: {r: 0, g: 1, b: 0, a: 1}
   gizmoSize: 0.5
+--- !u!58 &1857533556582625250
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996950852360389772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1}
+  serializedVersion: 2
+  m_Radius: 2
+--- !u!114 &5559356599338652806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996950852360389772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50e756f139e8884f93ef2eca2eef78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 6996950852360389770}
+  colliderType: 0
+  startingChildren: []
+  syncEnable: 1
+  syncDisable: 1
+  syncCollisionTags: 1
+  hitboxSize: 2
+  hitboxOffset: {x: 0, y: -1}
+  killBulletOnCollision: 1
+  maxSimultaneousCollisionsPerFrame: 1
+  collisionTags:
+    tagList: 1
+  OnHitByBullet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6996950852360389771}
+        m_TargetAssemblyTypeName: GauDingEnemy, Assembly-CSharp
+        m_MethodName: OnHitByBullet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHitByBulletEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHitByBulletExit:
+    m_PersistentCalls:
+      m_Calls: []
+  parentSyncFoldout: 0
+  collisionTagsFoldout: 0
+  advancedEventsFoldout: 0
+  useDefaultGizmoColor: 1
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
+  gizmoZOffset: 0
 --- !u!1 &6996950852593921242
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +308,7 @@ Transform:
   - {fileID: 6996950853038755793}
   - {fileID: 6996950853613074659}
   m_Father: {fileID: 6996950852360389770}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6996950852815997229
 GameObject:
