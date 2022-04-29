@@ -10,7 +10,8 @@ Material:
   m_Name: M_Crackers
   m_Shader: {fileID: -6465566751694194690, guid: b716ef1032c63b14094edf572b2e2d79, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHATEST_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,28 +21,36 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AlphaTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AmbientOcclusionTexture:
-        m_Texture: {fileID: 2800000, guid: 9112312ac0e761143ad673770470fdff, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7f8f06d8b592f14dae5feaeef0da08e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorTexture:
-        m_Texture: {fileID: 2800000, guid: 7975543409264c9449bd0351d185dec3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 63b750bd0a87bfd449b43fa3b03f76ea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveTexture:
-        m_Texture: {fileID: 2800000, guid: 9112312ac0e761143ad673770470fdff, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossinessTexture:
-        m_Texture: {fileID: 2800000, guid: 2db65e39f838aac44a6f90814753a596, type: 3}
+        m_Texture: {fileID: 2800000, guid: 86e5df60b1977df42bb4bbd47e561ec8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTexture:
-        m_Texture: {fileID: 2800000, guid: 26551aeeec3ad8b4f8465daf78948b87, type: 3}
+        m_Texture: {fileID: 2800000, guid: dd049ec4c70d62742ad401974d4f0279, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTexture:
-        m_Texture: {fileID: 2800000, guid: f401e998cfdf87340a8225f595ea5410, type: 3}
+        m_Texture: {fileID: 2800000, guid: a13982b4cbb06e94bb196b2fd91eda26, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_be6f2101f32a4967981678d067ae5c7c_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 59d09f7567e693f45a81c6c67bd95a24, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -58,14 +67,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0.5
+    - _EmissiveHueShift: 0
+    - _EmissiveSaturation: 1
     - _HueShift: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Saturation: 1
-    - _Value: 0
-    - _emissiveIntensity: 1
+    - _Saturation: 1.59
+    - _Value: 0.27
+    - _alphaYesNo: 0
+    - _emissiveIntensity: 0
     - _glossinessFactor: 0.5
-    m_Colors: []
+    m_Colors:
+    - _Tilling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7332798860206493265
 MonoBehaviour:
