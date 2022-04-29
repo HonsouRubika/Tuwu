@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 6756857420207074918}
   - component: {fileID: 5055453408226893662}
   - component: {fileID: 5162642352536969468}
+  - component: {fileID: 4386113823942788876}
   m_Layer: 0
   m_Name: Gun
   m_TagString: PlayerAttack
@@ -719,6 +720,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 1.5}
   serializedVersion: 2
   m_Radius: 1.16
+--- !u!114 &4386113823942788876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4660966136966137133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf97d121e49f01489688826654fa7ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7200368004916221998
 GameObject:
   m_ObjectHideFlags: 0

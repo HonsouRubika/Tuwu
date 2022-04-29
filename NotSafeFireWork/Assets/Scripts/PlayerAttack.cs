@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour
 	[Header("References")]
 	[SerializeField] BulletReceiver bulletReceiver;
 	[SerializeField] CircleCollider2D stunCollider;
+	[SerializeField] GameObject gunObject;
 
 	//sounds
 	SoundManager soundManager;
@@ -58,9 +59,13 @@ public class PlayerAttack : MonoBehaviour
 	public void OnHitByBullet(Bullet bullet, Vector3 position)
 	{
 		EmitterProfile _profile = bullet.emitter.emitterProfile;
+		float power = bullet.moduleParameters.GetFloat("_PowerLevel");
 		bullet.Die();
-		BulletEmitter _emitter = gameObject.AddComponent<BulletEmitter>();
+		Debug.Log($"Distance with bullet on attack: {Vector3.Distance(position, transform.position)}");
+		power += Vector3.Distance(position, transform.position) * 100;
+		BulletEmitter _emitter = gunObject.AddComponent<BulletEmitter>();
 		_emitter.emitterProfile = _profile;
+		_emitter.rootBullet.moduleParameters.SetFloat("_PowerLevel", power);
 		_emitter.Play();
 		//Destroy(_emitter);
 	}
