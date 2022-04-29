@@ -83,6 +83,8 @@ MonoBehaviour:
   maxHealthPoints: 400
   stunDuration: 0.1
   hitStunDuration: 0.2
+  enemyScore: 50
+  soundManager: {fileID: 0}
   moveSpeed: 7.5
   minDistanceWithPlayers: 5
   maxDistanceWithPlayers: 8

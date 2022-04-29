@@ -18,6 +18,8 @@ public abstract class Enemy : MonoBehaviour
 	[SerializeField] float hitStunDuration = .2f;
 	Clock hitStunTimer;
 
+	public int enemyScore = 10;
+
 	//sounds
 	[HideInInspector]
 	public SoundManager soundManager;
@@ -49,7 +51,13 @@ public abstract class Enemy : MonoBehaviour
 
 	void Death()
 	{
+		AddScore();
 		Destroy(gameObject);
+	}
+
+	void AddScore()
+    {
+		GameManager.Instance.playerScore += enemyScore;
 	}
 
 	#endregion

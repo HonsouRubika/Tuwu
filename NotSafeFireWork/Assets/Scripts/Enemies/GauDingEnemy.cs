@@ -187,7 +187,8 @@ public class GauDingEnemy : Enemy
 		canAttack = true;
 	}
 
-	enum HorizontalMoveDir
+
+    enum HorizontalMoveDir
 	{
 		Left,
 		Right

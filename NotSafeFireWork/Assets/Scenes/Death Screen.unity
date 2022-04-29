@@ -1333,6 +1333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnButton: {fileID: 1882996725}
+  scoreText: {fileID: 465842112}
 --- !u!4 &2135926434
 Transform:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager>
 	[SerializeField] GameObject enemiesGlobalParent;
 	public List<PlayerController> playerControllers = new List<PlayerController>();
 	public PlayerLifeSystem pls;
+	public int playerScore = 0;
 
 	private void Awake()
 	{
@@ -15,7 +16,12 @@ public class GameManager : Singleton<GameManager>
 		pls = GetComponent<PlayerLifeSystem>();
 	}
 
-	public void OnPlayerJoined()
+    private void OnDisable()
+    {
+		PlayerPrefs.SetInt("score", playerScore);
+    }
+
+    public void OnPlayerJoined()
 	{
 		playersJoinedCount++;
 
