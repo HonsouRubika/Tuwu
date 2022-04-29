@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
     public Animator playerAAnimator;
     public Animator playerBAnimator;
     [HideInInspector] public Animator animator;
-
+    public GameObject reanimationFeedback;
 
     //sons
     private SoundManager soundManager;
