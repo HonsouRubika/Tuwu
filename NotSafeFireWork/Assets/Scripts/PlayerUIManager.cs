@@ -14,7 +14,8 @@ public class PlayerUIManager : MonoBehaviour
     public float lifeDrawn = 1;
     public int ammoDrawn = 3;
 
-    public Image healthBar;
+    public Image healthBarA;
+    public Image healthBarB;
     public List<GameObject> ammoIcons;
 
     private void Start()
@@ -50,7 +51,8 @@ public class PlayerUIManager : MonoBehaviour
 
     private void DrawHealth()
     {
-        healthBar.fillAmount = lifeDrawn;
+        healthBarA.fillAmount = lifeDrawn;
+        healthBarB.fillAmount = lifeDrawn;
     }
 
     private void DrawAmmo()

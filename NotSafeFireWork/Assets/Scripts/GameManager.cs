@@ -34,6 +34,12 @@ public class GameManager : Singleton<GameManager>
 		{
 			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
 
+			PlayerUIManager uiManager = playerControllers[1].transform.GetChild(0).GetChild(0).GetComponent<PlayerUIManager>();
+
+			uiManager.playerNumber = 2;
+			uiManager.healthBarA.gameObject.SetActive(false);
+			uiManager.healthBarB.gameObject.SetActive(true);
+
 			playerControllers[0].transform.position = LevelHandler.Instance.listspawnPointsP1[0].transform.position;
 			playerControllers[1].transform.position = LevelHandler.Instance.listspawnPointsP2[0].transform.position;
 

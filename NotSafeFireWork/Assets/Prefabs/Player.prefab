@@ -777,12 +777,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 302214713205553581, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 885702631762380115}
+    - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+      propertyPath: healthBarA
+      value: 
+      objectReference: {fileID: 302214712916659959}
+    - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+      propertyPath: healthBarB
+      value: 
+      objectReference: {fileID: 302214714108991879}
     - target: {fileID: 302214713815417872, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -837,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 302214714431434461, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
@@ -846,3 +854,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 302214713815417872, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
   m_PrefabInstance: {fileID: 1524604968}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &302214712916659959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 302214714431434463, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+  m_PrefabInstance: {fileID: 1524604968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &302214714108991879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 302214713205553583, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+  m_PrefabInstance: {fileID: 1524604968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
