@@ -20,6 +20,8 @@ public abstract class Enemy : MonoBehaviour
 
 	public int enemyScore = 10;
 
+	[SerializeField] GameObject deathFX;
+
 	//sounds
 	[HideInInspector]
 	public SoundManager soundManager;
@@ -53,6 +55,7 @@ public abstract class Enemy : MonoBehaviour
 	{
 		LevelHandler.Instance.RoomClearFeedback();
 		AddScore();
+		Instantiate(deathFX, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}
 

@@ -80,6 +80,7 @@ public class PlayerAttack : MonoBehaviour
 		if (_power > 1000)
 			_power = 1000;
 
-		_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
+		if(_emitter.bullets.Count > 0)
+			_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
 	}
 }

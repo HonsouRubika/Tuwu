@@ -224,6 +224,7 @@ MonoBehaviour:
   stunDuration: 0.1
   hitStunDuration: 0.2
   enemyScore: 50
+  deathFX: {fileID: 4359796454226338659, guid: 6a6b5be28ff54fa42aaf06f613e7754f, type: 3}
   soundManager: {fileID: 0}
   moveSpeed: 5
   minDistanceWithPlayers: 5
