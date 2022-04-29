@@ -14,10 +14,17 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public List<GameObject> reviveIcons;
+    private GameManager gameManager;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     private void FixedUpdate()
     {
         GetRevive();
+        GetScore();
 
         DrawScore();
         DrawRevive();        
@@ -26,6 +33,11 @@ public class UIManager : MonoBehaviour
     private void GetRevive()
     {
         reviveDrawn = lifeSystem.playersGlobalLife;
+    }
+
+    private void GetScore()
+    {
+        scoreDrawn = gameManager.playerScore;
     }
 
     private void DrawScore()
