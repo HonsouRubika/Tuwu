@@ -28,12 +28,15 @@ public class GauDingEnemy : Enemy
 	[SerializeField] BulletEmitter splitterEmitter;
 
 	Transform player1, player2;
-	GauDingAttackState attackState = GauDingAttackState.Crackling;
+	public GauDingAttackState attackState = GauDingAttackState.Crackling;
 	HorizontalMoveDir moveDir = HorizontalMoveDir.Left;
 
 	bool canAttack = true;
 	Clock attackTimer;
 
+
+	//animations
+	public Animator animator;
 	public override void DealDamage(int _damages)
 	{
 		Hit(_damages);
@@ -198,7 +201,7 @@ public class GauDingEnemy : Enemy
 		Right
 	}
 
-	enum GauDingAttackState
+	public enum GauDingAttackState
 	{
 		Lion,
 		Crackling,

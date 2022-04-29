@@ -10,12 +10,12 @@ public abstract class Enemy : MonoBehaviour
 
 	bool stunned = false;
 	public bool Stunned { get => stunned;}
-	[SerializeField] float stunDuration = 1.5f;
+	public float stunDuration = 1.5f;
 	Clock stunTimer;
 
 	bool hitStunned = false;
 	public bool HitStunned { get => hitStunned; }
-	[SerializeField] float hitStunDuration = .2f;
+	public float hitStunDuration = .2f;
 	Clock hitStunTimer;
 
 	public int enemyScore = 10;
