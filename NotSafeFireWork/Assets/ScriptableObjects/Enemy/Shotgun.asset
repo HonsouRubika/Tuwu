@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 13995836
+  uniqueIndex: 11444985
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -2483,7 +2483,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7914980
+  uniqueIndex: 2386890
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -10212,7 +10212,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 11609982
+  uniqueIndex: 9933113
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -14760,7 +14760,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 7985322
+  uniqueIndex: 181645
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -21872,7 +21872,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 2288677
+  uniqueIndex: 4064147
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -46107,7 +46107,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 7730120
+  uniqueIndex: 8296469
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -70881,7 +70881,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 12986673
+  uniqueIndex: 15988359
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -95656,7 +95656,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 5172823
+  uniqueIndex: 15530109
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -102812,7 +102812,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 14017634
+  uniqueIndex: 12315534
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []

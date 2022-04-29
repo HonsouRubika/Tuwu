@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] Sprite playerBSprite;
     public GameObject p1;
     public GameObject p2;
+    public SpriteRenderer sprP1;
+    public SpriteRenderer sprP2;
     public Animator playerAAnimator;
     public Animator playerBAnimator;
     [HideInInspector] public Animator animator;
@@ -106,7 +108,19 @@ public class PlayerController : MonoBehaviour
         //dont change direction if dashing
         if (playerStateActu != (int)PlayerState.dashing)
         {
+
             movementInput = context.ReadValue<Vector2>();
+            //flip to right
+            if(movementInput.x >= 0)
+            {
+                sprP1.flipX = false;
+                sprP2.flipX = false;
+            }
+            else
+            {
+                sprP1.flipX = true;
+                sprP2.flipX = true;
+            }
         }
 
         if (movementInput != Vector2.zero && animator != null)
