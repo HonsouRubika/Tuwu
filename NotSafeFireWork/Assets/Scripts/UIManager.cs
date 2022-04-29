@@ -69,7 +69,7 @@ public class UIManager : Singleton<UIManager>
                     endScoreDrawn = gameManager.playerScore;
                 }
 
-                scoreText.text = "" + endScoreDrawn;
+                endScoreText.text = "" + endScoreDrawn;
             }
         }
     }
