@@ -36,11 +36,11 @@ public class PlayerUIManager : MonoBehaviour
     {
         if(playerNumber == 1)
         {
-            lifeDrawn = lifeSystem.playerALife / lifeSystem.playerAMaxLife;
+            lifeDrawn = lifeSystem.playerBLife / lifeSystem.playerBMaxLife;
         }
         else
         {
-            lifeDrawn = lifeSystem.playerBLife / lifeSystem.playerBMaxLife;
+            lifeDrawn = lifeSystem.playerALife / lifeSystem.playerAMaxLife;
         }
     }
 

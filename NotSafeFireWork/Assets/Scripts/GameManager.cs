@@ -43,10 +43,11 @@ public class GameManager : Singleton<GameManager>
 			playerControllers[0].transform.position = LevelHandler.Instance.listspawnPointsP1[0].transform.position;
 			playerControllers[1].transform.position = LevelHandler.Instance.listspawnPointsP2[0].transform.position;
 
+			pls.InitLifeSystem((uint)playersJoinedCount);
+
 			EnableFirstRoomEnemies();
 		}
 
-		pls.InitLifeSystem((uint)playersJoinedCount);
 	}
 
 	void EnableFirstRoomEnemies()

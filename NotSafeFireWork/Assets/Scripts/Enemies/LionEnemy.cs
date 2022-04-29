@@ -17,7 +17,7 @@ public class LionEnemy : Enemy
 	[SerializeField] Transform topBorder;
 	[SerializeField] Transform bottomBorder;
 
-	BulletEmitter emitter;
+	[SerializeField] BulletEmitter emitter;
 
 	bool canAttack = true;
 
@@ -39,7 +39,6 @@ public class LionEnemy : Enemy
 	private void Start()
 	{
 		Init();
-		emitter = GetComponent<BulletEmitter>();
 		target = GameManager.Instance.playerControllers[Random.Range(0, 2)].transform;
 		attackCooldownTimer = new Clock();
 		attackCooldownTimer.ClockEnded += OnAttackCooldownEnded;
@@ -90,6 +89,9 @@ public class LionEnemy : Enemy
 		{
 			canAttack = false;
 			attackCooldownTimer.SetTime(attackCooldown);
+
+			emitter.transform.parent.up = emitter.transform.parent.position - target.position;
+			emitter.Play();
 
 			soundManager.PlaySFX("shootEnemies", soundManager.fxSource);
 			animator.SetBool("isMove", false);
