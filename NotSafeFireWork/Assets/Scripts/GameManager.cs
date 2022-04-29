@@ -25,6 +25,11 @@ public class GameManager : Singleton<GameManager>
 	{
 		playersJoinedCount++;
 
+		if(playersJoinedCount == 1)
+		{
+			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
+		}
+
 		if(playersJoinedCount == 2)
 		{
 			playerControllers = new List<PlayerController>(FindObjectsOfType<PlayerController>());
@@ -36,6 +41,6 @@ public class GameManager : Singleton<GameManager>
 
 	void EnableFirstRoomEnemies()
 	{
-
+		LevelHandler.Instance.InitRoom();
 	}
 }

@@ -246,9 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackLifeTime: 0.15
-  attackCooldown: 1
+  attackCooldown: 0.25
   bulletReceiver: {fileID: 5055453408226893662}
   stunCollider: {fileID: 5162642352536969468}
+  gunObject: {fileID: 4660966136966137133}
 --- !u!114 &4198204311643993655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,8 +672,8 @@ MonoBehaviour:
   syncEnable: 1
   syncDisable: 1
   syncCollisionTags: 1
-  hitboxSize: 1.16
-  hitboxOffset: {x: 0, y: 1.5}
+  hitboxSize: 1.65
+  hitboxOffset: {x: 0, y: -0.44}
   killBulletOnCollision: 0
   maxSimultaneousCollisionsPerFrame: 50
   collisionTags:

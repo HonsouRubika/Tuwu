@@ -1,6 +1,7 @@
 using UnityEngine;
 using BulletPro;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -61,12 +62,18 @@ public class PlayerAttack : MonoBehaviour
 		EmitterProfile _profile = bullet.emitter.emitterProfile;
 		float power = bullet.moduleParameters.GetFloat("_PowerLevel");
 		bullet.Die();
-		Debug.Log($"Distance with bullet on attack: {Vector3.Distance(position, transform.position)}");
-		power += Vector3.Distance(position, transform.position) * 100;
+		power += Vector3.Distance(position, transform.position) * 50;
 		BulletEmitter _emitter = gunObject.AddComponent<BulletEmitter>();
 		_emitter.emitterProfile = _profile;
-		_emitter.rootBullet.moduleParameters.SetFloat("_PowerLevel", power);
 		_emitter.Play();
-		//Destroy(_emitter);
+		StartCoroutine(SetBulletPower(_emitter, power));
+	}
+
+	IEnumerator SetBulletPower(BulletEmitter _emitter, float _power)
+	{
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		yield return new WaitForEndOfFrame();
+		_emitter.bullets[0].moduleParameters.SetFloat("_PowerLevel", _power);
 	}
 }

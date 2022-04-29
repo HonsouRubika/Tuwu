@@ -34,6 +34,8 @@ public class GauDingEnemy : Enemy
 	bool canAttack = true;
 	Clock attackTimer;
 
+	bool isInit = false;
+
 	public override void DealDamage(int _damages)
 	{
 		Hit(_damages);
@@ -50,14 +52,21 @@ public class GauDingEnemy : Enemy
 		attackTimer.ClockEnded += OnAttackCooldownEnded;
 	}
 
-	private void OnEnable()
-	{
-		player1 = GameManager.Instance.playerControllers[0].transform;
-		player2 = GameManager.Instance.playerControllers[1].transform;
-	}
-
 	private void Update()
 	{
+		if(!isInit)
+		{
+			if(GameManager.Instance.playerControllers != null)
+			{
+				if(GameManager.Instance.playerControllers.Count == 2)
+				{
+					player1 = GameManager.Instance.playerControllers[0].transform;
+					player2 = GameManager.Instance.playerControllers[1].transform;
+					isInit = true;
+				}
+			}
+		}
+
 		if (Stunned || HitStunned)
 			return;
 

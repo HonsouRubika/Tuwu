@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 13988143
+  uniqueIndex: 1079727
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4738,7 +4738,7 @@ MonoBehaviour:
   foldoutExport: 0
   foldoutEmptyBin: 0
   foldoutCompactMode: 0
-  currentParamsSelected: {fileID: 6268382309436826723}
+  currentParamsSelected: {fileID: 114027673760526898}
   numberOfSubAssets: 9
 --- !u!114 &114027673760526898
 MonoBehaviour:
@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 9856285
+  uniqueIndex: 16049325
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -7073,7 +7073,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 8
+  currentlyDisplayedModule: 3
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -13059,7 +13059,7 @@ MonoBehaviour:
       requiredComponentName: 
   preview:
     collidersTex: {fileID: 0}
-    sprite: {fileID: 21300000, guid: 06e5d8f7ba9c17144b1ace83b073da17, type: 3}
+    sprite: {fileID: 21300000, guid: 96f9bc30b1621fd41b75fb6099008285, type: 3}
     gizmoColor: {r: 0, g: 0, b: 0.5, a: 1}
 --- !u!114 &114201774248674550
 MonoBehaviour:
@@ -13074,7 +13074,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 12644067
+  uniqueIndex: 11428349
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -17622,7 +17622,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 8344959
+  uniqueIndex: 13237851
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -24734,7 +24734,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 845098
+  uniqueIndex: 2761435
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -48969,7 +48969,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 9626207
+  uniqueIndex: 1476514
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -73743,7 +73743,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 15882536
+  uniqueIndex: 9325034
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -103444,7 +103444,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 8185904
+  uniqueIndex: 16025941
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -105763,7 +105763,7 @@ MonoBehaviour:
   foldoutVFX: 0
   hideSpriteList: 0
   vfxOpened: 0
-  currentlyDisplayedModule: 2
+  currentlyDisplayedModule: 3
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -111460,7 +111460,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 14225629
+  uniqueIndex: 11441278
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []

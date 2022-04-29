@@ -111,11 +111,13 @@ public class LionEnemy : Enemy
 	void MoveTowardsTargetPlayer()
 	{
 		transform.Translate((target.position - transform.position).normalized * Time.deltaTime * moveSpeed);
+		UpdateSpriteFlipX();
 	}
 
 	void FleeTargetPlayer()
 	{
 		transform.Translate((transform.position - target.position).normalized * Time.deltaTime * moveSpeed);
+		UpdateSpriteFlipX();
 	}
 
 	void UpdateSpriteFlipX()
@@ -137,6 +139,7 @@ public class LionEnemy : Enemy
 
 	public void OnHitByBullet(Bullet _bullet, Vector3 _position)
 	{
+		Debug.Log("Lion took damages: " + (int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
 		DealDamage((int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
 		if(_bullet != null)
 			_bullet.Die();
