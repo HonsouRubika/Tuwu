@@ -34,9 +34,9 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 		timeSincePlayerIn = new float[2];
 	}
 
-    public void OnTriggerEnter(Collider other)
+    /*public void OnTriggerEnter(Collider other)
     {
-        if (isBulletActive && other.tag == "Player")
+        *//*if (isBulletActive && other.tag == "Player")
         {
 			PlayerController _pc = other.gameObject.GetComponent<PlayerController>();
 			if (_pc.isPlayerA)
@@ -49,12 +49,12 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 				pc[1] = _pc;
 				timeSincePlayerIn[1] = 0;
 			}
-        }
+        }*//*
     }
 
     public void OnTriggerStay(Collider other)
     {
-		if (isBulletActive && other.tag == "Player")
+		*//*if (isBulletActive && other.tag == "Player")
 		{
 			if (pc[0] != null)
 			{
@@ -80,12 +80,12 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 					timeSincePlayerIn[1] = 0;
 				}
 			}
-		}
+		}*//*
 	}
 
     public void OnTriggerExit(Collider other)
     {
-		if (isBulletActive && other.tag == "Player")
+		*//*if (isBulletActive && other.tag == "Player")
 		{
 			Debug.Log("oui");
 			PlayerController _pc = other.gameObject.GetComponent<PlayerController>();
@@ -97,8 +97,8 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 			{
 				pc[1] = null;
 			}
-		}
-	}
+		}*//*
+	}*/
 
     // Update is (still) called once per frame
     public override void Update ()
@@ -114,6 +114,7 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 		base.OnBulletDeath();
 
 		// Your code here
+		ps.Stop();
 		isBulletActive = false;
 	}
 
@@ -130,8 +131,6 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 	{
 		base.OnBulletCollision(br, collisionPoint);
 
-		// Your code here
-
 	}
 
 	// This gets called whenever the bullet collides with a BulletReceiver AND was not colliding during the previous frame.
@@ -140,6 +139,7 @@ public class ExplosionAndCollider : BaseBulletBehaviour {
 		base.OnBulletCollisionEnter(br, collisionPoint);
 
 		// Your code here
+
 	}
 
 	// This gets called whenever the bullet stops colliding with any BulletReceiver.
