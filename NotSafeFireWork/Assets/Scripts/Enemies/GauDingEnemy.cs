@@ -87,13 +87,9 @@ public class GauDingEnemy : Enemy
 
 		if (Move())
         {
-			animator.SetBool("isMove", true);
 			Attack();
 		}
-        else
-        {
-			animator.SetBool("isMove", true);
-		}
+
 
 	}
 
@@ -107,6 +103,7 @@ public class GauDingEnemy : Enemy
 			if(transform.position.y < topBorder.position.y)
 			{
 				transform.Translate(Vector3.up * Time.deltaTime * moveSpeed);
+				animator.SetBool("isMove", true);
 			}
 
 			return false;
@@ -120,10 +117,12 @@ public class GauDingEnemy : Enemy
 			if(transform.position.y > bottomBorder.position.y)
 			{
 				transform.Translate(Vector3.down * Time.deltaTime * moveSpeed);
+				animator.SetBool("isMove", true);
 			}
 
 			return false;
 		}
+		
 
 		switch(moveDir)
 		{
