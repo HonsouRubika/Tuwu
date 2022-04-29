@@ -24,7 +24,7 @@ MonoBehaviour:
     volume: 1
   - name: dash
     clip: {fileID: 8300000, guid: d85b620319fa02542b892246c5635754, type: 3}
-    volume: 1
+    volume: 0.2
   - name: goodBatHit
     clip: {fileID: 8300000, guid: a11adeeab0f6eb74da6a1a536bf51b5d, type: 3}
     volume: 1
@@ -36,10 +36,10 @@ MonoBehaviour:
     volume: 1
   - name: noAmmo
     clip: {fileID: 8300000, guid: cd8b2a4e8ad203b4fa1cea6aa37437ae, type: 3}
-    volume: 1
+    volume: 0.3
   - name: charaHurt
     clip: {fileID: 8300000, guid: 0d48bb5adc1b85b47b2d10f76470a2b5, type: 3}
-    volume: 1
+    volume: 0.8
   - name: armorResist
     clip: {fileID: 8300000, guid: 07c8721b129a3704abf5e2e2306a988a, type: 3}
     volume: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     volume: 1
   - name: shootEnemies
     clip: {fileID: 8300000, guid: 5a7d554b4953671498ca983c560220fb, type: 3}
-    volume: 1
+    volume: 0.5
   - name: shootPlayer
     clip: {fileID: 8300000, guid: f3b7e10088cab4d4a99d7c7e450944df, type: 3}
-    volume: 1
+    volume: 0.5

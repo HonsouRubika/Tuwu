@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1ceba182d44425948b454a76abb28d7a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossinessTexture:
@@ -37,7 +37,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ef469442669d57a439b2b8c2db902db2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTexture:

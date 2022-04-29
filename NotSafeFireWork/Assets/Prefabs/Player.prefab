@@ -225,6 +225,8 @@ MonoBehaviour:
   playerStateActu: 0
   p1: {fileID: 4480989633145251391}
   p2: {fileID: 1254292510312530204}
+  sprP1: {fileID: 8427509511516730880}
+  sprP2: {fileID: 4099880625175286229}
   playerAAnimator: {fileID: 6978363021715957807}
   playerBAnimator: {fileID: 3736259111004046548}
   animator: {fileID: 0}
