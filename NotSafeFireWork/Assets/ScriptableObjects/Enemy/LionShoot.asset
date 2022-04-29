@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 9117975
+  uniqueIndex: 7098055
   profile: {fileID: 11400000}
   parent: {fileID: 5975123314881946294}
   children:
@@ -4633,7 +4633,7 @@ MonoBehaviour:
   m_Name: Firework
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 3219713
+  uniqueIndex: 5101617
   profile: {fileID: 11400000}
   parent: {fileID: 114201774248674550}
   children:
@@ -7713,7 +7713,7 @@ MonoBehaviour:
   foldoutVFX: 1
   hideSpriteList: 0
   vfxOpened: 1
-  currentlyDisplayedModule: 1
+  currentlyDisplayedModule: 2
   canMove: 1
   canCollide: 1
   isVisible: 1
@@ -8054,7 +8054,7 @@ MonoBehaviour:
         parameterType: 0
         relativeTo: 0
         parameterName: 
-      defaultValue: 0.5
+      defaultValue: 1.5
     useSlider: 0
     sliderMin: 0
     sliderMax: 0
@@ -13122,7 +13122,7 @@ MonoBehaviour:
   m_Name: Shot
   m_EditorClassIdentifier: 
   parameterType: 1
-  uniqueIndex: 2377937
+  uniqueIndex: 15412323
   profile: {fileID: 11400000}
   parent: {fileID: 114917193883442684}
   children:
@@ -17670,7 +17670,7 @@ MonoBehaviour:
   m_Name: Root Emitter
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 16591931
+  uniqueIndex: 15385922
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children:
@@ -24782,7 +24782,7 @@ MonoBehaviour:
   m_Name: Pattern
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 15674780
+  uniqueIndex: 7015253
   profile: {fileID: 11400000}
   parent: {fileID: 114671512830859702}
   children:
@@ -49017,7 +49017,7 @@ MonoBehaviour:
   m_Name: Turn
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 7703441
+  uniqueIndex: 15061599
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
@@ -73791,7 +73791,7 @@ MonoBehaviour:
   m_Name: Explosion
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 10400421
+  uniqueIndex: 15056457
   profile: {fileID: 11400000}
   parent: {fileID: 114027673760526898}
   children:
@@ -98566,7 +98566,7 @@ MonoBehaviour:
   m_Name: Fire
   m_EditorClassIdentifier: 
   parameterType: 0
-  uniqueIndex: 15437586
+  uniqueIndex: 12105211
   profile: {fileID: 11400000}
   parent: {fileID: -6706221572997223675}
   children: []
@@ -105722,7 +105722,7 @@ MonoBehaviour:
   m_Name: Slow
   m_EditorClassIdentifier: 
   parameterType: 2
-  uniqueIndex: 5485591
+  uniqueIndex: 2672038
   profile: {fileID: 11400000}
   parent: {fileID: 0}
   children: []
