@@ -290,8 +290,7 @@ public class LevelHandler : Singleton<LevelHandler>
             
             arrows[currentState].SetActive(true);
 
-            //Bruit de Gong;
-            soundManager.PlaySFX("gongStartLevel", soundManager.fxSource);
+            
 
             //Trigger le clignotement de la flèche.
             lerpCoroutine = StartCoroutine(LerpValue());
@@ -392,8 +391,9 @@ public class LevelHandler : Singleton<LevelHandler>
             item.gameObject.SetActive(true);
             //Instancier les fummées.
         }
-       
 
+        //Bruit de Gong;
+        soundManager.PlaySFX("gongStartLevel", soundManager.fxSource);
 
         //Faire apparaitre le message FIGHT.
 
