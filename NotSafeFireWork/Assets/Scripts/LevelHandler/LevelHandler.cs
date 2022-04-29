@@ -6,7 +6,6 @@ public class LevelHandler : Singleton<LevelHandler>
 {
     private SoundManager soundManager;
 
-
     [SerializeField] private Animator animator;
 
     [SerializeField] private GameObject blockerParent;
@@ -29,9 +28,16 @@ public class LevelHandler : Singleton<LevelHandler>
     [SerializeField] private GameObject enemyParent5;
     [SerializeField] private List<GameObject> enemyInRoom5 = new List<GameObject>();
 
+    [SerializeField] private GameObject spawnPointP1;
+    [SerializeField] private List<GameObject> listspawnPointsP1 = new List<GameObject>();
+    [SerializeField] private GameObject SspawnPointP2;
+    [SerializeField] private List<GameObject> listspawnPointsP2 = new List<GameObject>();
+
+
     [SerializeField] private GameObject arrowParent;
     [SerializeField] private List<GameObject> arrows = new List<GameObject>();
     public bool roomfinished = false;
+    public GameObject collisionCollider;
 
     public static int currentState = 0;
 
@@ -40,6 +46,18 @@ public class LevelHandler : Singleton<LevelHandler>
     private void Awake()
     {
         soundManager = SoundManager.Instance;
+
+        foreach (Transform child in spawnPointP1.transform)
+        {
+            listspawnPointsP1.Add(child.gameObject);
+        }
+
+
+        foreach (Transform child in SspawnPointP2.transform)
+        {
+            listspawnPointsP2.Add(child.gameObject);
+        }
+
 
         foreach (Transform child in transform)
         {
@@ -136,44 +154,43 @@ public class LevelHandler : Singleton<LevelHandler>
         enemyInRoom0.Clear();
         foreach (Transform item in enemyParent0.gameObject.transform)
         {
-            
             enemyInRoom0.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
 
             enemyInRoom1.Clear();
         foreach (Transform item in enemyParent1.gameObject.transform)
         {
             enemyInRoom1.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
 
             enemyInRoom2.Clear();
         foreach (Transform item in enemyParent2.gameObject.transform)
         {
             enemyInRoom2.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
 
             enemyInRoom3.Clear();
         foreach (Transform item in enemyParent3.transform)
         {
             enemyInRoom3.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
 
             enemyInRoom4.Clear();
         foreach (Transform item in enemyParent4.transform)
         {
             enemyInRoom4.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
 
             enemyInRoom5.Clear();
         foreach (Transform item in enemyParent5.transform)
         {
             enemyInRoom5.Add(item.gameObject);
-            //item.gameObject.SetActive(false);
+            item.gameObject.SetActive(false);
         }
     }
 
@@ -259,6 +276,8 @@ public class LevelHandler : Singleton<LevelHandler>
     {
         if (currentList.Count ==0)
         {
+          
+
             blockers[currentState].SetActive(false);
             
             arrows[currentState].SetActive(true);
@@ -268,8 +287,6 @@ public class LevelHandler : Singleton<LevelHandler>
 
             //Trigger le clignotement de la flèche.
             lerpCoroutine = StartCoroutine(LerpValue());
-            
-            ChangeRoomTrigger();
         }
         else
         {
@@ -320,11 +337,12 @@ public class LevelHandler : Singleton<LevelHandler>
     //A appeler lorsque les joueurs veulent changer de salle.
     public void ChangeRoomTrigger()
     {
+        collisionCollider.SetActive(false);
+
         //désactiver le clignotement de la flèche.
         if (lerpCoroutine != null)
         {
             StopCoroutine(lerpCoroutine);
-          
         }    
         
         //Couper les inputs des players.
@@ -340,29 +358,39 @@ public class LevelHandler : Singleton<LevelHandler>
         {
             item.gameObject.SetActive(false);
             //Instancier les fummées.
-            Instantiate()
+            GameObject spawnedItem = Instantiate(item.gameObject.GetComponent<PlayerController>().goodReanimationFeedback, item.gameObject.transform.position,Quaternion.identity);
         }
 
         //Activer le changement de caméra
         StartCoroutine(ChangeRoom());
-        
-        //Faire déplacer les personnages
-
-
     }
 
     private IEnumerator ChangeRoom()
     {
         CameraSwitch();
+        Debug.Log("ChangeRoom");
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         currentState++;
 
         //A la fin de la transition :
         arrows[currentState - 1].SetActive(false);
-        
-        //Bruit de Gong;
-        soundManager.PlaySFX("gongStartLevel", soundManager.fxSource);
+
+
+        //Teléporter les personnages
+
+        GameManager.Instance.playerControllers[0].gameObject.transform.position = listspawnPointsP1[currentState].transform.position;
+        GameManager.Instance.playerControllers[1].gameObject.transform.position = listspawnPointsP2[currentState].transform.position;
+        foreach (var item in GameManager.Instance.playerControllers)
+        {
+            Instantiate(item.gameObject.GetComponent<PlayerController>().goodReanimationFeedback, item.gameObject.transform);
+            item.gameObject.SetActive(true);
+            //Instancier les fummées.
+        }
+       
+
+
+        //Faire apparaitre le message FIGHT.
 
         //Réactiver les inputs du player;
         foreach (var item in GameManager.Instance.playerControllers)
@@ -374,6 +402,8 @@ public class LevelHandler : Singleton<LevelHandler>
 
     void CameraSwitch()
     {
+        Debug.Log(currentState);
+
         switch (currentState)
         {
             case 1:

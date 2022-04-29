@@ -54,7 +54,9 @@ public class PlayerController : MonoBehaviour
     public Animator playerAAnimator;
     public Animator playerBAnimator;
     [HideInInspector] public Animator animator;
-    public GameObject reanimationFeedback;
+    public GameObject goodReanimationFeedback;
+    public GameObject reanimationFeedbackA;
+    public GameObject reanimationFeedbackB;
 
     //sons
     private SoundManager soundManager;
@@ -105,6 +107,7 @@ public class PlayerController : MonoBehaviour
             p2.SetActive(false);
             isPlayerA = true;
             animator = playerAAnimator;
+            goodReanimationFeedback = reanimationFeedbackA;
         }
         else if (GameManager.Instance.playersJoinedCount >= 2)
         {
@@ -112,6 +115,7 @@ public class PlayerController : MonoBehaviour
             p2.SetActive(true);
             isPlayerA = false;
             animator = playerBAnimator;
+            goodReanimationFeedback = reanimationFeedbackB;
         }
     }
 
