@@ -76,7 +76,7 @@ Material:
     - _QueueOffset: 0
     - _Saturation: 1
     - _Value: 0
-    - _emissiveIntensity: 1
+    - _emissiveIntensity: 6
     - _glossinessFactor: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
