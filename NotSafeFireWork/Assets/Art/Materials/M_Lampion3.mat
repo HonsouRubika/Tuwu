@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlphaTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c6ebfb79b13cda541aedf73f986bc280, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AmbientOcclusionTexture:
@@ -68,15 +68,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0.5
+    - _EmissiveHueShift: 0.199
+    - _EmissiveSaturation: 0.41
     - _HueShift: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Saturation: 1
     - _Value: 0
-    - _alphaYesNo: 0
-    - _emissiveIntensity: 4
+    - _alphaYesNo: 1
+    - _emissiveIntensity: 2.41
     - _glossinessFactor: 0.5
-    m_Colors: []
+    m_Colors:
+    - _Tilling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6405069064171502453
 MonoBehaviour:

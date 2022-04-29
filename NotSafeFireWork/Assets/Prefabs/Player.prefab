@@ -246,9 +246,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackLifeTime: 0.15
-  attackCooldown: 1
+  attackCooldown: 0.25
   bulletReceiver: {fileID: 5055453408226893662}
   stunCollider: {fileID: 5162642352536969468}
+  gunObject: {fileID: 4660966136966137133}
 --- !u!114 &4198204311643993655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,8 +387,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.7
+  m_Center: {x: 0, y: -0.3, z: 0}
 --- !u!114 &7907753353254495983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,8 +407,8 @@ MonoBehaviour:
   syncEnable: 1
   syncDisable: 1
   syncCollisionTags: 1
-  hitboxSize: 1
-  hitboxOffset: {x: 0, y: 0}
+  hitboxSize: 2.7
+  hitboxOffset: {x: 0, y: -0.3}
   killBulletOnCollision: 1
   maxSimultaneousCollisionsPerFrame: 1
   collisionTags:
@@ -459,7 +460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1090157494761712733
 Transform:
   m_ObjectHideFlags: 0
@@ -671,8 +672,8 @@ MonoBehaviour:
   syncEnable: 1
   syncDisable: 1
   syncCollisionTags: 1
-  hitboxSize: 1.16
-  hitboxOffset: {x: 0, y: 1.5}
+  hitboxSize: 1.65
+  hitboxOffset: {x: 0, y: -0.44}
   killBulletOnCollision: 0
   maxSimultaneousCollisionsPerFrame: 50
   collisionTags:
@@ -776,12 +777,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 302214713205553581, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 885702631762380115}
+    - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+      propertyPath: healthBarA
+      value: 
+      objectReference: {fileID: 302214712916659959}
+    - target: {fileID: 302214713688796769, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+      propertyPath: healthBarB
+      value: 
+      objectReference: {fileID: 302214714108991879}
     - target: {fileID: 302214713815417872, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -836,7 +845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 302214714431434461, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
@@ -845,3 +854,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 302214713815417872, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
   m_PrefabInstance: {fileID: 1524604968}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &302214712916659959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 302214714431434463, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+  m_PrefabInstance: {fileID: 1524604968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &302214714108991879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 302214713205553583, guid: 660ce096a238d9f4aa96ecac1491fe19, type: 3}
+  m_PrefabInstance: {fileID: 1524604968}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -47,6 +47,14 @@ public class LionEnemy : Enemy
 
 	private void Update()
 	{
+		if (GameManager.Instance.playerControllers == null)
+			return;
+		if (GameManager.Instance.playerControllers.Count != 2)
+			return;
+
+		if(target == null)
+			target = GameManager.Instance.playerControllers[Random.Range(0, 2)].transform;
+
 		if (Stunned || HitStunned)
 		{
             if (Stunned)
@@ -111,11 +119,13 @@ public class LionEnemy : Enemy
 	void MoveTowardsTargetPlayer()
 	{
 		transform.Translate((target.position - transform.position).normalized * Time.deltaTime * moveSpeed);
+		UpdateSpriteFlipX();
 	}
 
 	void FleeTargetPlayer()
 	{
 		transform.Translate((transform.position - target.position).normalized * Time.deltaTime * moveSpeed);
+		UpdateSpriteFlipX();
 	}
 
 	void UpdateSpriteFlipX()

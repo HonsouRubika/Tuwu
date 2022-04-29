@@ -317,12 +317,14 @@ MonoBehaviour:
   maxHealthPoints: 800
   stunDuration: 1.5
   hitStunDuration: 0.2
+  enemyScore: 10
   soundManager: {fileID: 0}
   moveSpeed: 7.5
   minDistance: 5
   maxDistance: 8
   attackCooldown: 1
   animator: {fileID: 5158754535097194699}
+  sr: {fileID: 136445977798561751}
   leftBorder: {fileID: 4063974036324260596}
   rightBorder: {fileID: 1825874310182349625}
   topBorder: {fileID: 4687034806197385981}

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class PlayerLifeSystem : MonoBehaviour
 {
@@ -22,10 +23,11 @@ public class PlayerLifeSystem : MonoBehaviour
     [HideInInspector] Animator playerAAnimator;
     [HideInInspector] Animator playerBAnimator;
 
-    private void Awake()
-    {
-        //
-    }
+    Clock invincibilityTimerA;
+    Clock invincibilityTimerB;
+
+    bool canTakeDamageA = true;
+    bool canTakeDamageB = true;
 
     private void Start()
     {
@@ -35,6 +37,22 @@ public class PlayerLifeSystem : MonoBehaviour
         playerALife = playerAMaxLife;
         playerBLife = playerBMaxLife;
         playersGlobalLife = 3;
+
+        invincibilityTimerA = new Clock();
+        invincibilityTimerB = new Clock();
+
+        invincibilityTimerA.ClockEnded += OnInvincibilityTimerEndedA;
+        invincibilityTimerB.ClockEnded += OnInvincibilityTimerEndedB;
+    }
+
+	private void OnInvincibilityTimerEndedA()
+	{
+        canTakeDamageA = true;
+	}
+
+    private void OnInvincibilityTimerEndedB()
+    {
+        canTakeDamageB = true;
     }
 
     public void InitLifeSystem(uint playerID)
@@ -55,6 +73,14 @@ public class PlayerLifeSystem : MonoBehaviour
 
     public void PlayerATakeDamage(float _damages)
     {
+        if (!canTakeDamageA)
+            return;
+
+        SoundManager.Instance.PlaySFX("charaHurt", SoundManager.Instance.fxSource);
+
+        canTakeDamageA = false;
+        invincibilityTimerA.SetTime(1.2f);
+
         if(playerALife - _damages < 0)
         {
             playerALife = 0;
@@ -73,6 +99,14 @@ public class PlayerLifeSystem : MonoBehaviour
 
     public void PlayerBTakeDamage(float _damages)
     {
+        if (!canTakeDamageB)
+            return;
+
+        SoundManager.Instance.PlaySFX("charaHurt", SoundManager.Instance.fxSource);
+
+        canTakeDamageB = false;
+        invincibilityTimerB.SetTime(1.2f);
+
         if (playerBLife - _damages < 0)
         {
             playerBLife = 0;

@@ -14,7 +14,8 @@ public class PlayerUIManager : MonoBehaviour
     public float lifeDrawn = 1;
     public int ammoDrawn = 3;
 
-    public Image healthBar;
+    public Image healthBarA;
+    public Image healthBarB;
     public List<GameObject> ammoIcons;
 
     private void Start()
@@ -22,16 +23,16 @@ public class PlayerUIManager : MonoBehaviour
         lifeSystem = GameManager.Instance.GetComponent<PlayerLifeSystem>();
     }
 
-    private void FixedUpdate()
-    {
-        GetHealth();
-        GetAmmo();
+	private void FixedUpdate()
+	{
+		GetHealth();
+		GetAmmo();
 
-        DrawHealth();
-        DrawAmmo();
-    }
+		DrawHealth();
+		DrawAmmo();
+	}
 
-    private void GetHealth()
+	private void GetHealth()
     {
         if(playerNumber == 1)
         {
@@ -50,7 +51,8 @@ public class PlayerUIManager : MonoBehaviour
 
     private void DrawHealth()
     {
-        healthBar.fillAmount = lifeDrawn;
+        healthBarA.fillAmount = lifeDrawn;
+        healthBarB.fillAmount = lifeDrawn;
     }
 
     private void DrawAmmo()

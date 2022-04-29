@@ -68,6 +68,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0.5
+    - _EmissiveHueShift: 0
+    - _EmissiveSaturation: 1
     - _HueShift: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -76,7 +78,8 @@ Material:
     - _alphaYesNo: 0
     - _emissiveIntensity: 0
     - _glossinessFactor: 0.5
-    m_Colors: []
+    m_Colors:
+    - _Tilling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2296947187914415401
 MonoBehaviour:

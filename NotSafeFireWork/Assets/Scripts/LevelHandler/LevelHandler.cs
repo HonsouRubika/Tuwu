@@ -45,7 +45,6 @@ public class LevelHandler : Singleton<LevelHandler>
 
     private void Awake()
     {
-        soundManager = SoundManager.Instance;
 
         foreach (Transform child in spawnPointP1.transform)
         {
@@ -72,10 +71,12 @@ public class LevelHandler : Singleton<LevelHandler>
 
         EnemyInit();
         currentList = enemyInRoom0;
-        InitRoom();
     }
 
-
+	private void Start()
+	{
+        soundManager = SoundManager.Instance;
+    }
     public void ClearRoom()
     {
         switch (currentState)
@@ -287,10 +288,6 @@ public class LevelHandler : Singleton<LevelHandler>
 
             //Trigger le clignotement de la flèche.
             lerpCoroutine = StartCoroutine(LerpValue());
-        }
-        else
-        {
-            Debug.Log("Still Enemy");
         }
     }
 
