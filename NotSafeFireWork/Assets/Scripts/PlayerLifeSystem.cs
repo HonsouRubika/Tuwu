@@ -171,18 +171,22 @@ public class PlayerLifeSystem : MonoBehaviour
     {
         if (playerALife <= 0)
         {
+            GameManager.Instance.playerControllers[0].playerStateActu = 1;
             if (playerAAnimator != null) playerAAnimator.SetBool("isDead", true);
             new WaitForSeconds(0.5f);
+            GameManager.Instance.playerControllers[0].playerStateActu = 0;
             reviveFX.Play();
-            GameManager.Instance.playerControllers[0].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[0].gameObject.transform.position.z);
+            GameManager.Instance.playerControllers[1].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[1].gameObject.transform.position.z);
             playerALife = playerAMaxLife;
         }
         else if (playerBLife <= 0)
         {
+            GameManager.Instance.playerControllers[1].playerStateActu = 1;
             if (playerBAnimator != null) playerBAnimator.SetBool("isDead", true);
             new WaitForSeconds(0.5f);
+            GameManager.Instance.playerControllers[1].playerStateActu = 0;
             reviveFX.Play();
-            GameManager.Instance.playerControllers[1].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP2[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[1].gameObject.transform.position.z);
+            GameManager.Instance.playerControllers[0].gameObject.transform.position = new Vector3(LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.x, LevelHandler.Instance.listspawnPointsP1[LevelHandler.currentState].transform.position.y, GameManager.Instance.playerControllers[0].gameObject.transform.position.z);
             playerBLife = playerBMaxLife;
 
         }
