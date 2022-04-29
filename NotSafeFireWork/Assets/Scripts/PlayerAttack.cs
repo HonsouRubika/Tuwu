@@ -63,7 +63,5 @@ public class PlayerAttack : MonoBehaviour
 		_emitter.emitterProfile = _profile;
 		_emitter.Play();
 		//Destroy(_emitter);
-		//bullet.moduleMovement.Rotate()
-		//change bullet dir
 	}
 }

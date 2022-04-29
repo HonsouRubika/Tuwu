@@ -1,4 +1,5 @@
 using UnityEngine;
+using BulletPro;
 
 public class LionEnemy : Enemy
 {
@@ -6,8 +7,18 @@ public class LionEnemy : Enemy
 	[SerializeField] float moveSpeed = 10f;
 	[SerializeField] float minDistance = 5f;
 	[SerializeField] float maxDistance = 6f;
+	[SerializeField] float attackCooldown = 1f;
+	Clock attackCooldownTimer;
 	public Animator animator;
+	[Space]
+	[SerializeField] Transform leftBorder;
+	[SerializeField] Transform rightBorder;
+	[SerializeField] Transform topBorder;
+	[SerializeField] Transform bottomBorder;
 
+	BulletEmitter emitter;
+
+	bool canAttack = true;
 
 	public override void DealDamage(int _damages)
 	{
@@ -27,7 +38,10 @@ public class LionEnemy : Enemy
 	private void Start()
 	{
 		Init();
+		emitter = GetComponent<BulletEmitter>();
 		target = GameManager.Instance.playerControllers[Random.Range(0, 2)].transform;
+		attackCooldownTimer = new Clock();
+		attackCooldownTimer.ClockEnded += OnAttackCooldownEnded;
 	}
 
 	private void Update()
@@ -63,14 +77,34 @@ public class LionEnemy : Enemy
 			animator.SetBool("isMove", true);
 			animator.SetBool("isFire", false);
 		}
-		else
+		else if(canAttack)
 		{
-			//Shoot at target player
-			Debug.Log("boom");
+			canAttack = false;
+			attackCooldownTimer.SetTime(attackCooldown);
+
 			soundManager.PlaySFX("shootEnemies", soundManager.fxSource);
 			animator.SetBool("isMove", false);
 			animator.SetBool("isFire", true);
 		}
+
+		CheckBorders();
+	}
+
+	private void CheckBorders()
+	{
+		Vector2 _position = transform.position;
+
+		if (_position.x <= leftBorder.position.x)
+			transform.position = new Vector2(leftBorder.position.x, transform.position.y);
+
+		if (_position.x >= rightBorder.position.x)
+			transform.position = new Vector2(rightBorder.position.x, transform.position.y);
+
+		if (_position.x <= bottomBorder.position.y)
+			transform.position = new Vector2(transform.position.x, bottomBorder.position.y);
+
+		if (_position.x >= topBorder.position.y)
+			transform.position = new Vector2(transform.position.x, topBorder.position.y);
 	}
 
 	void MoveTowardsTargetPlayer()
@@ -81,5 +115,15 @@ public class LionEnemy : Enemy
 	void FleeTargetPlayer()
 	{
 		transform.Translate((transform.position - target.position).normalized * Time.deltaTime * moveSpeed);
+	}
+
+	void OnAttackCooldownEnded()
+	{
+		canAttack = true;
+	}
+
+	public void OnHitByBullet(Bullet _bullet, Vector3 _position)
+	{
+		DealDamage((int)_bullet.moduleParameters.GetFloat("_PowerLevel"));
 	}
 }
