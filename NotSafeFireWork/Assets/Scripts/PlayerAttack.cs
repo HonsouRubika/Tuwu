@@ -16,8 +16,11 @@ public class PlayerAttack : MonoBehaviour
 	[SerializeField] BulletReceiver bulletReceiver;
 	[SerializeField] CircleCollider2D stunCollider;
 
+	//sounds
+	SoundManager soundManager;
 	private void Start()
 	{
+		soundManager = SoundManager.Instance;
 		attackCooldownTimer = new Clock();
 		attackCooldownTimer.ClockEnded += OnAttackCooldownEnded;
 
@@ -35,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
 
 		bulletReceiver.enabled = true;
 		stunCollider.enabled = true;
-
+		soundManager.PlaySFX("swingBat", soundManager.fxSource);
 		canAttack = false;
 		attackLifeTimer.SetTime(attackLifeTime);
 		attackCooldownTimer.SetTime(attackCooldown);

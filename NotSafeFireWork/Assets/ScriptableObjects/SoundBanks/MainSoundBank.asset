@@ -70,3 +70,6 @@ MonoBehaviour:
   - name: shootEnemies
     clip: {fileID: 8300000, guid: 5a7d554b4953671498ca983c560220fb, type: 3}
     volume: 1
+  - name: shootPlayer
+    clip: {fileID: 8300000, guid: f3b7e10088cab4d4a99d7c7e450944df, type: 3}
+    volume: 1

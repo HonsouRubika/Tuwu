@@ -55,6 +55,9 @@ public class PlayerController : MonoBehaviour
     public Animator playerBAnimator;
     [HideInInspector] public Animator animator;
 
+
+    //sons
+    private SoundManager soundManager;
     /*
      *  TODO LIST :
      *  - attaque à la batte
@@ -66,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        soundManager = SoundManager.Instance;
 
         rb = GetComponent<Rigidbody>();
 
@@ -138,6 +142,7 @@ public class PlayerController : MonoBehaviour
             dashCooldownStart = Time.time;
             playerStateActu = (int)PlayerState.dashing;
             animator.SetBool("isDash", true);
+            soundManager.PlaySFX("dash", soundManager.fxSource);
         }
         else if (context.started && Time.time <= dashCooldownStart + dashCooldown)
         {
@@ -169,7 +174,7 @@ public class PlayerController : MonoBehaviour
             shootCooldownStart = Time.time;
             fireworkStackActu--;
             gun.GetComponent<BulletPro.BulletEmitter>().Play();
-
+            soundManager.PlaySFX("shootPlayer",soundManager.fwSource);
             //start reloading timer
             if (fireworkCooldownStart + fireworkCooldown < Time.time) {
                 fireworkCooldownStart = Time.time;
@@ -181,10 +186,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (context.started && Time.time <= shootCooldownStart + shootCooldown)
         {
+            soundManager.PlaySFX("noAmmo", soundManager.fxSource);
             //Debug.Log("Shoot cooldown not finished")
         }
         else if (context.started && fireworkStackActu <= 0)
         {
+            soundManager.PlaySFX("noAmmo", soundManager.fxSource);
             //Debug.Log("No more firework to shoot");
         }
 
@@ -276,6 +283,7 @@ public class PlayerController : MonoBehaviour
     public void OnHitByBullet(Bullet bullet, Vector3 position)
     {
         //deal dmg to player on lifeSystem with bullet.moduleParameters.GetFloat("_PowerLevel")
+        soundManager.PlaySFX("charaHurt", soundManager.fxSource);
     }
 
     private IEnumerator Shooting()
